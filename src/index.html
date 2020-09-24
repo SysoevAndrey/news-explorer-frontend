@@ -6,10 +6,12 @@
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
-  <section class="main">
-    <img class="main__logo" src="<%=require('./images/logo.svg').default %>" alt="Andrey Sysoev">
-    <h1 class="main__title">Скоро здесь будет крутой сайт.</h1>
-  </section>
+  <div class="root">
+    <header class="header root__section"></header>
+    <div class="search root__section"></div>
+    <div class="about-author root__section"></div>
+    <footer class="footer root__section"></footer>
+  </div>
   <script src="<%=htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>
