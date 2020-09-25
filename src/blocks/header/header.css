@@ -5,13 +5,14 @@
 @import url(./__list-item/_current/header__list-item_current.css);
 @import url(./__link/header__link.css);
 @import url(./__button/header__button.css);
+@import url(./__button-text/header__button-text.css);
 
 .header {
   position: absolute;
   box-sizing: border-box;
   height: 80px;
   width: 100%;
-  padding: 0 7.5%;
+  padding: 0 7.2%;
   display: flex;
   justify-content: space-between;
   align-items: center;

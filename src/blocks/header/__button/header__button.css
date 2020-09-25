@@ -1,8 +1,8 @@
 .header__button {
-  font-weight: 500;
   height: 48px;
   width: 112px;
-  margin-left: 17px;
+  padding: 0;
+  margin-left: 18px;
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
