@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="root">
-    <header class="header root__section">
+    <header class="header">
       <p class="header__title">NewsExplorer</p>
       <nav class="header__container">
         <ul class="header__list">
@@ -19,13 +19,13 @@
             <a href="#saved" class="header__link">Сохраненные статьи</a>
           </li>
           <button class="header__button">
-            <p class="header__button-text">Грета</p>
+            <p class="header__button-text">Андрей</p>
             <img src="<%=require('./images/logout.svg').default %>" alt="" class="header__button-icon">
           </button>
         </ul>
       </nav>
     </header>
-    <div class="search root__section">
+    <div class="search">
       <h1 class="search__title">Что в мире творится?</h1>
       <p class="search__text">Находите самые свежие статьи на любую тему и сохраняйте в своём&nbsp;личном кабинете.</p>
       <form class="search__form" name="search">
@@ -33,8 +33,14 @@
         <button class="search__button">Искать</button>
       </form>
     </div>
-    <div class="about-author root__section"></div>
-    <footer class="footer root__section"></footer>
+    <div class="about-author">
+      <img src="<%=require('./images/me.jpg').default %>" alt="Автор на фоне Лужников" class="about-author__photo">
+      <div class="about-author__info">
+        <h2 class="about-author__title">Об авторе</h2>
+        <p class="about-author__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi molestiae sed amet praesentium fugit quis aspernatur blanditiis reiciendis illum, cupiditate quo, soluta temporibus sit neque odio nemo magnam ad? Saepe?</p>
+      </div>
+    </div>
+    <footer class="footer"></footer>
   </div>
   <script src="<%=htmlWebpackPlugin.files.js %>"></script>
 </body>
