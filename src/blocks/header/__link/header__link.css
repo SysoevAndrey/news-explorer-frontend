@@ -1,0 +1,13 @@
+.header__link {
+  color: #fff;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+  transition: .1s linear;
+}
+
+.header__link:hover {
+  opacity: .7;
+}

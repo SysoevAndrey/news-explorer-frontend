@@ -1,5 +1,7 @@
 .root {
+  position: relative;
   font-family: 'Roboto', Arial;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;

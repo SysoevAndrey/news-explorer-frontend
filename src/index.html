@@ -2,12 +2,29 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Webpack</title>
+  <title>NewsExplorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+  <link rel="icon" type="image/svg" href="<%=require('./images/favicon.svg').default %>">
 </head>
 <body>
   <div class="root">
-    <header class="header root__section"></header>
+    <header class="header root__section">
+      <p class="header__title">NewsExplorer</p>
+      <nav class="header__container">
+        <ul class="header__list">
+          <li class="header__list-item header__list-item_current">
+            <a href="#main" class="header__link">Главная</a>
+          </li>
+          <li class="header__list-item">
+            <a href="#saved" class="header__link">Сохраненные статьи</a>
+          </li>
+          <button class="header__button">
+            <p class="header__button-text">Грета</p>
+            <img src="<%=require('./images/logout.svg').default %>" alt="" class="header__button-icon">
+          </button>
+        </ul>
+      </nav>
+    </header>
     <div class="search root__section"></div>
     <div class="about-author root__section"></div>
     <footer class="footer root__section"></footer>
