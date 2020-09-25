@@ -1,5 +1,8 @@
 .root {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: 'Roboto', Arial;
   font-style: normal;
   -webkit-font-smoothing: antialiased;

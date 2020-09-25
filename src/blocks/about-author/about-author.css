@@ -3,6 +3,7 @@
 @import url(./__text/about-author__text.css);
 
 .about-author {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 80px 216px 80px 104px;

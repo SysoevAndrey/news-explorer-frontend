@@ -37,10 +37,41 @@
       <img src="<%=require('./images/me.jpg').default %>" alt="Автор на фоне Лужников" class="about-author__photo">
       <div class="about-author__info">
         <h2 class="about-author__title">Об авторе</h2>
-        <p class="about-author__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi molestiae sed amet praesentium fugit quis aspernatur blanditiis reiciendis illum, cupiditate quo, soluta temporibus sit neque odio nemo magnam ad? Saepe?</p>
+        <p class="about-author__text">Меня зовут Андрей Сысоев, я Веб-разработчик.
+          <br>
+          Учусь в МГТУ&nbsp;им.&nbsp;Баумана, изучаю устройство систем автоматизированного проектирования.
+          Последние полгода проходил параллельно курс по веб-разработке от Яндекс.Практикума.
+          <br>
+          <br>
+          Научился адаптивно верстать, описывать логику страницы с помощью JavaScript,
+          собирать Webpack’ом и использовать Git и Github для контроля версий.
+          За время обучения сверстал одностраничные сайты, адаптивные лендинги и прототип социальной сети,
+          используя API Яндекс.Практикума, которое в настоящее время заменятся собственным, написанным на Node.js.</p>
       </div>
     </div>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
+      <nav class="footer__container">
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a href="#main" class="footer__link">Главная</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a>
+          </li>
+          <li class="footer__list-icon">
+            <a href="https://github.com/SysoevAndrey" class="footer__link" target="blank">
+              <img src="<%=require('./images/github.svg').default %>" alt="Логотип Github" class="footer__icon">
+            </a>
+          </li>
+          <li class="footer__list-icon">
+            <a href="https://www.facebook.com/andrey.sysoev.399/" class="footer__link" target="blank">
+              <img src="<%=require('./images/facebook.svg').default %>" alt="Логотип Facebook" class="footer__icon">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
   </div>
   <script src="<%=htmlWebpackPlugin.files.js %>"></script>
 </body>

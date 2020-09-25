@@ -1,0 +1,13 @@
+@import url(./__copyright/footer__copyright.css);
+@import url(./__list/footer__list.css);
+@import url(./__list-item/footer__list-item.css);
+@import url(./__link/footer__link.css);
+@import url(./__list-icon/footer__list-icon.css);
+
+.footer {
+  height: 80px;
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
