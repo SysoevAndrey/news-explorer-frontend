@@ -1,4 +1,7 @@
 .card__description {
+  min-height: 304px;
   box-sizing: border-box;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px 28px;
 }
