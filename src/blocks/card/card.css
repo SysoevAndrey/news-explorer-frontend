@@ -1,0 +1,17 @@
+@import url(./__save-icon/card__save-icon.css);
+@import url(./__save-icon/_saved/card__save-icon_saved.css);
+@import url(./__auth/card__auth.css);
+@import url(./__auth-text/card__auth-text.css);
+@import url(./__image/card__image.css);
+@import url(./__description/card__description.css);
+@import url(./__date/card__date.css);
+@import url(./__title/card__title.css);
+@import url(./__text/card__text.css);
+@import url(./__source/card__source.css);
+
+.card {
+  position: relative;
+  width: 32.4%;
+  background-color: #fff;
+  border-radius: 10px;
+}

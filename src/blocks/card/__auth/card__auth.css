@@ -1,0 +1,13 @@
+.card__auth {
+  position: absolute;
+  top: 24px;
+  right: 69px;
+  background: #FFFFFF;
+  width: 182px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
