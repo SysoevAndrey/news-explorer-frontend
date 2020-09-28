@@ -1,0 +1,11 @@
+@import url(./__saved/info__saved.css);
+@import url(./__title/info__title.css);
+@import url(./__keys/info__keys.css);
+@import url(./__strong/info__strong.css);
+
+.info {
+  color: #1A1B22;
+  width: 100%;
+  padding: 40px 104px 56px;
+  box-sizing: border-box;
+}

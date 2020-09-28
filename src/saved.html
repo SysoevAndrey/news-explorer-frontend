@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Andrey Sysoev">
+  <meta name="description" content="Saved articles page">
+  <title>Сохраненные статьи</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+  <link rel="icon" type="image/svg" href="<%=require('./images/favicon.svg').default %>">
+</head>
+<body>
+  <div class="root">
+    <header class="header header_light">
+      <p class="header__title">NewsExplorer</p>
+      <nav class="header__container">
+        <ul class="header__list">
+          <li class="header__list-item">
+            <a href="index.html" class="header__link">Главная</a>
+          </li>
+          <li class="header__list-item header__list-item_current-light">
+            <a href="saved.html" class="header__link">Сохраненные статьи</a>
+          </li>
+          <button class="button header__button header__button_light">
+            <p class="header__button-text header__button-text_light">Андрей</p>
+            <img src="<%=require('./images/logout-light.svg').default %>" alt="" class="header__button-icon">
+          </button>
+        </ul>
+      </nav>
+    </header>
+    <div class="info">
+      <p class="info__saved">Сохранённые статьи</p>
+      <h1 class="info__title">Грета, у вас 5 сохранённых статей</h1>
+      <h2 class="info__keys">По ключевым словам: <span class="info__strong">Природа, Тайга</span> и <span class="info__strong">2 другим</span></h2>
+    </div>
+    <div class="results"></div>
+  </div>
+  <script src="<%=htmlWebpackPlugin.files.js %>"></script>
+</body>
+</html>
