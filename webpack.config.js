@@ -10,7 +10,10 @@ const FontminPlugin = require('fontmin-webpack');
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: {
+    index: './src/index.js',
+    saved: './src/saved-articles/index.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
@@ -60,12 +63,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      chunks: ['index']
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/saved.html',
-      filename: 'saved.html'
+      filename: 'saved.html',
+      chunks: ['saved']
     }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({

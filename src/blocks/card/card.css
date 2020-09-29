@@ -10,8 +10,8 @@
 @import url(./__source/card__source.css);
 
 .card {
+  width: 400px;
   position: relative;
-  width: 32.4%;
   background-color: #fff;
   border-radius: 10px;
 }

@@ -1,5 +1,8 @@
 .results__container {
+  width: 100%;
   padding-top: 64px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 16px;
+  justify-content: center;
 }

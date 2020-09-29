@@ -29,10 +29,101 @@
     </header>
     <div class="info">
       <p class="info__saved">Сохранённые статьи</p>
-      <h1 class="info__title">Грета, у вас 5 сохранённых статей</h1>
+      <h1 class="info__title">Андрей, у вас 5 сохранённых статей</h1>
       <h2 class="info__keys">По ключевым словам: <span class="info__strong">Природа, Тайга</span> и <span class="info__strong">2 другим</span></h2>
     </div>
-    <div class="results"></div>
+    <div class="results results_saved">
+      <div class="results__container">
+        <div class="card">
+          <button class="button card__save-icon"></button>
+          <div class="card__auth">
+            <p class="card__auth-text">Войдите, чтобы сохранять статьи</p>
+          </div>
+          <img src="<%=require('./images/cards/image_08.jpg').default %>" alt="" class="card__image">
+          <div class="card__description">
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <h4 class="card__source">Лента.ру</h4>
+          </div>
+        </div>
+        <div class="card">
+          <button class="button card__save-icon"></button>
+          <div class="card__auth">
+            <p class="card__auth-text">Войдите, чтобы сохранять статьи</p>
+          </div>
+          <img src="<%=require('./images/cards/image_08.jpg').default %>" alt="" class="card__image">
+          <div class="card__description">
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <h4 class="card__source">Лента.ру</h4>
+          </div>
+        </div>
+        <div class="card">
+          <button class="button card__save-icon"></button>
+          <div class="card__auth">
+            <p class="card__auth-text">Войдите, чтобы сохранять статьи</p>
+          </div>
+          <img src="<%=require('./images/cards/image_08.jpg').default %>" alt="" class="card__image">
+          <div class="card__description">
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <h4 class="card__source">Лента.ру</h4>
+          </div>
+        </div>
+        <div class="card">
+          <button class="button card__save-icon"></button>
+          <div class="card__auth">
+            <p class="card__auth-text">Войдите, чтобы сохранять статьи</p>
+          </div>
+          <img src="<%=require('./images/cards/image_08.jpg').default %>" alt="" class="card__image">
+          <div class="card__description">
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <h4 class="card__source">Лента.ру</h4>
+          </div>
+        </div>
+        <div class="card">
+          <button class="button card__save-icon"></button>
+          <div class="card__auth">
+            <p class="card__auth-text">Войдите, чтобы сохранять статьи</p>
+          </div>
+          <img src="<%=require('./images/cards/image_08.jpg').default %>" alt="" class="card__image">
+          <div class="card__description">
+            <p class="card__date">2 августа, 2019</p>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <h4 class="card__source">Лента.ру</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
+      <nav class="footer__container">
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a href="#main" class="footer__link">Главная</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a>
+          </li>
+          <li class="footer__list-icon">
+            <a href="https://github.com/SysoevAndrey" class="footer__link" target="blank">
+              <img src="<%=require('./images/github.svg').default %>" alt="Логотип Github" class="footer__icon">
+            </a>
+          </li>
+          <li class="footer__list-icon">
+            <a href="https://www.facebook.com/andrey.sysoev.399/" class="footer__link" target="blank">
+              <img src="<%=require('./images/facebook.svg').default %>" alt="Логотип Facebook" class="footer__icon">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
   </div>
   <script src="<%=htmlWebpackPlugin.files.js %>"></script>
 </body>
