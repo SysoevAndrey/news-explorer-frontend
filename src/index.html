@@ -133,6 +133,26 @@
       </nav>
     </footer>
   </div>
+
+  <div class="popup login-popup popup_is-opened">
+    <div class="popup__content login-popup__content">
+      <img src="<%=require('./images/close.svg').default %>" alt="Крестик закрытия формы входа" class="popup__close login-popup__close">
+      <h3 class="popup__title login-popup__title">Вход</h3>
+      <form class="popup__form login-popup__form" name="login" novalidate>
+        <p class="popup__text">Email</p>
+        <input type="text" id="login-name" autocomplete="off" name="name" class="popup__input login-popup__input login-popup__input_type_name"
+          placeholder="Введите почту" required minlength="2" maxlength="30">
+        <span class="error popup__name-error"></span>
+        <p class="popup__text">Пароль</p>
+        <input type="password" id="login-pass" autocomplete="off" name="pass" class="popup__input login-popup__input login-popup__input_type_link-url"
+          placeholder="Введите пароль" required>
+        <span class="error popup__link-error"></span>
+        <button type class="button popup__button login-popup__button" disabled>Войти</button>
+      </form>
+      <p class="popup__sinup">или <span class="popup__link">Зарегистрироваться</span></p>
+    </div>
+  </div>
+
   <script src="<%=htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>
