@@ -1,158 +1,345 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="author" content="Andrey Sysoev">
-  <meta name="description" content="News Explorer page">
-  <title>Главная</title>
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
-  <link rel="icon" type="image/svg" href="<%=require('./images/favicon.svg').default %>">
-</head>
-<body>
-  <div class="root">
-    <header class="header">
-      <p class="header__title">NewsExplorer</p>
-      <nav class="header__container">
-        <ul class="header__list">
-          <li class="header__list-item header__list-item_current">
-            <a href="index.html" class="header__link">Главная</a>
-          </li>
-          <li class="header__list-item">
-            <a href="saved.html" class="header__link">Сохраненные статьи</a>
-          </li>
-          <button class="button header__button">
-            <p class="header__button-text">Андрей</p>
-            <img src="<%=require('./images/logout.svg').default %>" alt="" class="header__button-icon">
-          </button>
-        </ul>
-      </nav>
-    </header>
-    <div class="search">
-      <h1 class="search__title">Что в мире творится?</h1>
-      <p class="search__text">Находите самые свежие статьи на любую тему и сохраняйте в своём&nbsp;личном кабинете.</p>
-      <form class="search__form" name="search">
-        <input type="text" class="search__input" placeholder="Введите тему новости" />
-        <button class="button search__button">Искать</button>
-      </form>
-    </div>
-    <div class="results">
-      <div class="results__loading">
-        <i class="preloader"></i>
-        <p class="results__loading-message">Идет поиск новостей...</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Andrey Sysoev" />
+    <meta name="description" content="News Explorer page" />
+    <title>Главная</title>
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>" />
+    <link
+      rel="icon"
+      type="image/svg"
+      href="<%=require('./images/favicon.svg').default %>"
+    />
+  </head>
+  <body>
+    <div class="root">
+      <header class="header">
+        <p class="header__title">NewsExplorer</p>
+        <nav class="header__container">
+          <ul class="header__list">
+            <li class="header__list-item header__list-item_current">
+              <a href="index.html" class="header__link">Главная</a>
+            </li>
+            <li class="header__list-item">
+              <a href="saved.html" class="header__link">Сохраненные статьи</a>
+            </li>
+            <button class="button header__button">
+              <p class="header__button-text">Андрей</p>
+              <img
+                src="<%=require('./images/logout.svg').default %>"
+                alt=""
+                class="header__button-icon"
+              />
+            </button>
+          </ul>
+        </nav>
+      </header>
+      <div class="search">
+        <h1 class="search__title">Что в мире творится?</h1>
+        <p class="search__text">
+          Находите самые свежие статьи на любую тему и сохраняйте в
+          своём&nbsp;личном кабинете.
+        </p>
+        <form class="search__form" name="search">
+          <input
+            type="text"
+            class="search__input"
+            placeholder="Введите тему новости"
+          />
+          <button class="button search__button">Искать</button>
+        </form>
       </div>
-      <div class="results__found">
-        <h2 class="results__title">Результаты поиска</h2>
-        <div class="results__container">
-          <div class="card">
-            <button class="button card__save-icon"></button>
-            <div class="card__auth">
-              <p class="card__auth-text">Войдите, чтобы сохранять статьи</p>
-            </div>
-            <img src="<%=require('./images/cards/image_08.jpg').default %>" alt="" class="card__image">
-            <div class="card__description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-              <h4 class="card__source">Лента.ру</h4>
-            </div>
-          </div>
-          <div class="card">
-            <button class="button card__save-icon card__save-icon_saved"></button>
-            <div class="card__auth">
-              <p class="card__auth-text">Войдите, чтобы сохранять статьи</p>
-            </div>
-            <img src="<%=require('./images/cards/image_07.jpg').default %>" alt="" class="card__image">
-            <div class="card__description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
-              <p class="card__text">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
-                из местных чудес природы.</p>
-              <h4 class="card__source">Медуза</h4>
-            </div>
-          </div>
-          <div class="card">
-            <button class="button card__save-icon"></button>
-            <div class="card__auth">
-              <p class="card__auth-text">Войдите, чтобы сохранять статьи</p>
-            </div>
-            <img src="<%=require('./images/cards/image_04.jpg').default %>" alt="" class="card__image">
-            <div class="card__description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-              <p class="card__text">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-              <h4 class="card__source">Риа</h4>
-            </div>
-          </div>
+      <div class="results">
+        <div class="results__loading">
+          <i class="preloader"></i>
+          <p class="results__loading-message">Идет поиск новостей...</p>
         </div>
-        <button class="button results__button">Показать еще</button>
+        <div class="results__found">
+          <h2 class="results__title">Результаты поиска</h2>
+          <div class="results__container">
+            <div class="card">
+              <p class="card__additional"></p>
+              <button class="button card__save-icon"></button>
+              <p class="card__additional card__additional_type_save">
+                Войдите, чтобы сохранять статьи
+              </p>
+              <img
+                src="<%=require('./images/cards/image_08.jpg').default %>"
+                alt=""
+                class="card__image"
+              />
+              <div class="card__description">
+                <p class="card__date">2 августа, 2019</p>
+                <h3 class="card__title">Национальное достояние – парки</h3>
+                <p class="card__text">
+                  В 2016 году Америка отмечала важный юбилей: сто лет назад
+                  здесь начала складываться система национальных парков –
+                  охраняемых территорий, где и сегодня каждый может приобщиться
+                  к природе.
+                </p>
+                <h4 class="card__source">Лента.ру</h4>
+              </div>
+            </div>
+            <div class="card">
+              <p class="card__additional"></p>
+              <button
+                class="button card__save-icon card__save-icon_saved"
+              ></button>
+              <p class="card__additional card__additional_type_save">
+                Войдите, чтобы сохранять статьи
+              </p>
+              <img
+                src="<%=require('./images/cards/image_07.jpg').default %>"
+                alt=""
+                class="card__image"
+              />
+              <div class="card__description">
+                <p class="card__date">2 августа, 2019</p>
+                <h3 class="card__title">
+                  Лесные огоньки: история одной фотографии
+                </h3>
+                <p class="card__text">
+                  Фотограф отвлеклась от освещения суровой политической
+                  реальности Мексики, чтобы запечатлеть ускользающую красоту
+                  одного из местных чудес природы.
+                </p>
+                <h4 class="card__source">Медуза</h4>
+              </div>
+            </div>
+            <div class="card">
+              <p class="card__additional"></p>
+              <button class="button card__save-icon"></button>
+              <p class="card__additional card__additional_type_save">
+                Войдите, чтобы сохранять статьи
+              </p>
+              <img
+                src="<%=require('./images/cards/image_04.jpg').default %>"
+                alt=""
+                class="card__image"
+              />
+              <div class="card__description">
+                <p class="card__date">2 августа, 2019</p>
+                <h3 class="card__title">
+                  «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+                </h3>
+                <p class="card__text">
+                  Знаменитый фотограф снимает первозданные леса России, чтобы
+                  рассказать о необходимости их сохранения. В этот раз он
+                  отправился в Двинско-Пинежскую тайгу, где...
+                </p>
+                <h4 class="card__source">Риа</h4>
+              </div>
+            </div>
+          </div>
+          <button class="button results__button">Показать еще</button>
+        </div>
+        <div class="results__not-found">
+          <img
+            src="<%=require('./images/not-found.svg').default %>"
+            alt="Не найдено"
+            class="results__not-found-img"
+          />
+          <h3 class="results__not-found-title">Ничего не найдено</h3>
+          <p class="results__not-found-text">
+            К сожалению по вашему запросу ничего не найдено.
+          </p>
+        </div>
       </div>
-      <div class="results__not-found">
-        <img src="<%=require('./images/not-found.svg').default %>" alt="Не найдено" class="results__not-found-img">
-        <h3 class="results__not-found-title">Ничего не найдено</h3>
-        <p class="results__not-found-text">К сожалению по вашему запросу
-          ничего не найдено.</p>
+      <div class="about-author">
+        <img
+          src="<%=require('./images/me.jpg').default %>"
+          alt="Автор на фоне Лужников"
+          class="about-author__photo"
+        />
+        <div class="about-author__info">
+          <h2 class="about-author__title">Об авторе</h2>
+          <p class="about-author__text">
+            Меня зовут Андрей Сысоев, я Веб-разработчик.
+            <br />
+            Учусь в МГТУ&nbsp;им.&nbsp;Баумана, изучаю устройство систем
+            автоматизированного проектирования. Последние полгода проходил
+            параллельно курс по веб-разработке от Яндекс.Практикума.
+            <br />
+            <br />
+            Научился адаптивно верстать, описывать логику страницы с помощью
+            JavaScript, собирать Webpack’ом и использовать Git и Github для
+            контроля версий. За время обучения сверстал одностраничные сайты,
+            адаптивные лендинги и прототип социальной сети, используя API
+            Яндекс.Практикума, которое в настоящее время заменятся собственным,
+            написанным на Node.js.
+          </p>
+        </div>
       </div>
+      <footer class="footer">
+        <p class="footer__copyright">
+          &copy; 2020 Supersite, Powered by News API
+        </p>
+        <nav class="footer__container">
+          <ul class="footer__list">
+            <li class="footer__list-item">
+              <a href="#main" class="footer__link">Главная</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="https://praktikum.yandex.ru/" class="footer__link"
+                >Яндекс.Практикум</a
+              >
+            </li>
+            <li class="footer__list-icon">
+              <a
+                href="https://github.com/SysoevAndrey"
+                class="footer__link"
+                target="blank"
+              >
+                <img
+                  src="<%=require('./images/github.svg').default %>"
+                  alt="Логотип Github"
+                  class="footer__icon"
+                />
+              </a>
+            </li>
+            <li class="footer__list-icon">
+              <a
+                href="https://www.facebook.com/andrey.sysoev.399/"
+                class="footer__link"
+                target="blank"
+              >
+                <img
+                  src="<%=require('./images/facebook.svg').default %>"
+                  alt="Логотип Facebook"
+                  class="footer__icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
     </div>
-    <div class="about-author">
-      <img src="<%=require('./images/me.jpg').default %>" alt="Автор на фоне Лужников" class="about-author__photo">
-      <div class="about-author__info">
-        <h2 class="about-author__title">Об авторе</h2>
-        <p class="about-author__text">Меня зовут Андрей Сысоев, я Веб-разработчик.
-          <br>
-          Учусь в МГТУ&nbsp;им.&nbsp;Баумана, изучаю устройство систем автоматизированного проектирования.
-          Последние полгода проходил параллельно курс по веб-разработке от Яндекс.Практикума.
-          <br>
-          <br>
-          Научился адаптивно верстать, описывать логику страницы с помощью JavaScript,
-          собирать Webpack’ом и использовать Git и Github для контроля версий.
-          За время обучения сверстал одностраничные сайты, адаптивные лендинги и прототип социальной сети,
-          используя API Яндекс.Практикума, которое в настоящее время заменятся собственным, написанным на Node.js.</p>
-      </div>
-    </div>
-    <footer class="footer">
-      <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
-      <nav class="footer__container">
-        <ul class="footer__list">
-          <li class="footer__list-item">
-            <a href="#main" class="footer__link">Главная</a>
-          </li>
-          <li class="footer__list-item">
-            <a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a>
-          </li>
-          <li class="footer__list-icon">
-            <a href="https://github.com/SysoevAndrey" class="footer__link" target="blank">
-              <img src="<%=require('./images/github.svg').default %>" alt="Логотип Github" class="footer__icon">
-            </a>
-          </li>
-          <li class="footer__list-icon">
-            <a href="https://www.facebook.com/andrey.sysoev.399/" class="footer__link" target="blank">
-              <img src="<%=require('./images/facebook.svg').default %>" alt="Логотип Facebook" class="footer__icon">
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </footer>
-  </div>
 
-  <div class="popup login-popup">
-    <div class="popup__content login-popup__content">
-      <img src="<%=require('./images/close.svg').default %>" alt="Крестик закрытия формы входа" class="popup__close login-popup__close">
-      <h3 class="popup__title login-popup__title">Вход</h3>
-      <form class="popup__form login-popup__form" name="login" novalidate>
-        <p class="popup__text">Email</p>
-        <input type="text" id="login-name" autocomplete="off" name="name" class="popup__input login-popup__input login-popup__input_type_name"
-          placeholder="Введите почту" required minlength="2" maxlength="30">
-        <span class="error popup__name-error"></span>
-        <p class="popup__text">Пароль</p>
-        <input type="password" id="login-pass" autocomplete="off" name="pass" class="popup__input login-popup__input login-popup__input_type_link-url"
-          placeholder="Введите пароль" required>
-        <span class="error popup__link-error"></span>
-        <button type class="button popup__button login-popup__button" disabled>Войти</button>
-      </form>
-      <p class="popup__sinup">или <span class="popup__link">Зарегистрироваться</span></p>
+    <div class="popup login-popup">
+      <div class="popup__content login-popup__content">
+        <img
+          src="<%=require('./images/close.svg').default %>"
+          alt="Крестик закрытия формы входа"
+          class="popup__close login-popup__close"
+        />
+        <h3 class="popup__title login-popup__title">Вход</h3>
+        <form class="popup__form login-popup__form" name="login" novalidate>
+          <p class="popup__text">Email</p>
+          <input
+            type="text"
+            id="login-email"
+            autocomplete="off"
+            name="email"
+            class="popup__input login-popup__input login-popup__input_type_email"
+            placeholder="Введите почту"
+            required
+            minlength="2"
+            maxlength="30"
+          />
+          <span class="error popup__name-error"></span>
+          <p class="popup__text">Пароль</p>
+          <input
+            type="password"
+            id="login-pass"
+            autocomplete="off"
+            name="pass"
+            class="popup__input login-popup__input login-popup__input_type_link-pass"
+            placeholder="Введите пароль"
+            required
+            minlength="6"
+            maxlength="30"
+          />
+          <span class="error popup__pass-error"></span>
+          <button
+            type
+            class="button popup__button login-popup__button"
+            disabled
+          >
+            Войти
+          </button>
+        </form>
+        <p class="popup__bottom">
+          или <span class="popup__link">Зарегистрироваться</span>
+        </p>
+      </div>
     </div>
-  </div>
 
-  <script src="<%=htmlWebpackPlugin.files.js %>"></script>
-</body>
+    <div class="popup signup-popup">
+      <div class="popup__content signup-popup__content">
+        <img
+          src="<%=require('./images/close.svg').default %>"
+          alt="Крестик закрытия формы входа"
+          class="popup__close signup-popup__close"
+        />
+        <h3 class="popup__title signup-popup__title">Регистрация</h3>
+        <form class="popup__form lsignuppopup__form" name="login" novalidate>
+          <p class="popup__text">Email</p>
+          <input
+            type="text"
+            id="signup-email"
+            autocomplete="off"
+            name="email"
+            class="popup__input signup-popup__input signup-popup__input_type_email"
+            placeholder="Введите почту"
+            required
+            minlength="6"
+            maxlength="30"
+          />
+          <span class="error popup__name-error"></span>
+          <p class="popup__text">Пароль</p>
+          <input
+            type="password"
+            id="signup-pass"
+            autocomplete="off"
+            name="pass"
+            class="popup__input signup-popup__input signup-popup__input_type_pass"
+            placeholder="Введите пароль"
+            required
+            minlength="2"
+            maxlength="30"
+          />
+          <span class="error popup__pass-error"></span>
+          <p class="popup__text">Имя</p>
+          <input
+            type="text"
+            id="signup-name"
+            autocomplete="off"
+            name="name"
+            class="popup__input signup-popup__input signup-popup__input_type_name"
+            placeholder="Введите свое имя"
+            required
+          />
+          <span class="error popup__link-error"></span>
+          <p class="error popup__auth-error"></p>
+          <button
+            type
+            class="button popup__button signup-popup__button"
+            disabled
+          >
+            Зарегистрироваться
+          </button>
+        </form>
+        <p class="popup__bottom">или <span class="popup__link">Войти</span></p>
+      </div>
+    </div>
+
+    <div class="popup res-popup">
+      <div class="popup__content login-popup__content">
+        <img
+          src="<%=require('./images/close.svg').default %>"
+          alt="Крестик закрытия формы входа"
+          class="popup__close login-popup__close"
+        />
+        <h3 class="popup__title login-popup__title">
+          Пользователь успешно зарегистрирован!
+        </h3>
+        <p class="popup__bottom popup__bottom_position_left">
+          <span class="popup__link">Выполнить вход</span>
+        </p>
+      </div>
+    </div>
+
+    <script src="<%=htmlWebpackPlugin.files.js %>"></script>
+  </body>
 </html>

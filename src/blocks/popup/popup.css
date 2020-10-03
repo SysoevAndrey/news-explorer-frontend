@@ -7,8 +7,9 @@
 @import url(./__button/popup__button.css);
 @import url(./_is-opened/popup_is-opened.css);
 @import url(./__button/_active/popup__button_active.css);
-@import url(./__sinup/popup__sinup.css);
+@import url(./__bottom/popup__bottom.css);
 @import url(./__link/popup__link.css);
+@import url(./__auth-error/popup__auth-error.css);
 
 .popup {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;

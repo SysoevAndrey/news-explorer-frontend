@@ -1,0 +1,6 @@
+.card__additional.card__additional_type_category {
+  display: flex;
+  left: 24px;
+  font-size: 14px;
+  line-height: 24px;
+}

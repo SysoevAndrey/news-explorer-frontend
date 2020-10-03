@@ -1,0 +1,19 @@
+.card__delete-icon {
+  background: url(../../../images/bin.svg) center no-repeat;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: .1s linear;
+}
+
+.card__delete-icon:hover {
+  background: url(../../../images/bin-active.svg);
+}
+
+.card__delete-icon:hover~.card__additional {
+  display: flex;
+}

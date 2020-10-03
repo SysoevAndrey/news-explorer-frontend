@@ -1,7 +1,8 @@
 @import url(./__save-icon/card__save-icon.css);
+@import url(./__delete-icon/card__delete-icon.css);
 @import url(./__save-icon/_saved/card__save-icon_saved.css);
-@import url(./__auth/card__auth.css);
-@import url(./__auth-text/card__auth-text.css);
+@import url(./__additional/card__additional.css);
+@import url(./__additional-text/card__additional-text.css);
 @import url(./__image/card__image.css);
 @import url(./__description/card__description.css);
 @import url(./__date/card__date.css);

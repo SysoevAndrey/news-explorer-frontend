@@ -1,4 +1,6 @@
-.popup__sinup {
+@import url(./_position/_left/popup__bottom_position_left.css);
+
+.popup__bottom {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-size: 14px;
