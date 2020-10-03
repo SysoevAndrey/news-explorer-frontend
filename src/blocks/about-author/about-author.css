@@ -1,11 +1,18 @@
 @import url(./__photo/about-author__photo.css);
+@import url(./__info/about-author__info.css);
 @import url(./__title/about-author__title.css);
 @import url(./__text/about-author__text.css);
 
 .about-author {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding: 80px 216px 80px 104px;
+  justify-content: flex-start;
+  padding: 80px 104px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .about-author {
+    display: none;
+  }
 }

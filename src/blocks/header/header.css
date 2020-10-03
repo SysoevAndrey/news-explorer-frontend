@@ -10,16 +10,28 @@
 @import url(./__button/_light/header__button_light.css);
 @import url(./__button-text/header__button-text.css);
 @import url(./__button-text/_light/header__button-text_light.css);
-
 .header {
   position: absolute;
   box-sizing: border-box;
   height: 80px;
-  width: 100%;
+  width: 1440px;
   padding: 0 7.2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: rgba(196, 196, 196, 0.01);
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 1440px) {
+  .header {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .header {
+    height: 66px;
+    padding: 0 5.2%;
+  }
 }
