@@ -11,5 +11,6 @@
   .results__container {
     grid-template-columns: repeat(auto-fill, 224px);
     gap: 8px;
+    padding-top: 32px;
   }
 }

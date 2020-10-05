@@ -20,5 +20,6 @@
   .results__button {
     width: 240px;
     height: 56px;
+    margin-top: 25px;
   }
 }

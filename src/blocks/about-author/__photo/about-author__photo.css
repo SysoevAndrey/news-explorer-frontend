@@ -9,5 +9,6 @@
   .about-author__photo {
     width: 232px;
     height: 232px;
+    margin-right: 32px;
   }
 }

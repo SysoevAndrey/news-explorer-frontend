@@ -1,3 +1,9 @@
 .footer__list-icon {
   margin: 0 0 0 29px;
 }
+
+@media screen and (max-width: 768px) {
+  .footer__list-icon {
+    margin-left: 26px;
+  }
+}
