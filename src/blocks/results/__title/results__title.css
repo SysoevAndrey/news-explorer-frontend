@@ -7,3 +7,10 @@
   margin: 0;
   align-self: flex-start;
 }
+
+@media screen and (max-width: 768px) {
+  .results__title {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}

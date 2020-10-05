@@ -16,3 +16,9 @@
   box-sizing: border-box;
   /* display: none; */
 }
+
+@media screen and (max-width: 768px) {
+  .results {
+    padding: 40px;
+  }
+}
