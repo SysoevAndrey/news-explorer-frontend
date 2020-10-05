@@ -15,3 +15,10 @@
 .results__button:hover {
   opacity: .8;
 }
+
+@media screen and (max-width: 768px) {
+  .results__button {
+    width: 240px;
+    height: 56px;
+  }
+}

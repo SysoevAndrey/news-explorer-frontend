@@ -6,3 +6,10 @@
   gap: 16px;
   justify-content: center;
 }
+
+@media screen and (max-width: 768px) {
+  .results__container {
+    grid-template-columns: repeat(auto-fill, 224px);
+    gap: 8px;
+  }
+}

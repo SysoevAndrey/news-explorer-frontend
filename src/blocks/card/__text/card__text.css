@@ -4,3 +4,14 @@
   color: #1A1B22;
   margin: 16px 0 0 0;
 }
+
+@media screen and (max-width: 768px) {
+  .card__text {
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+    /* max-height: 88px; */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+}

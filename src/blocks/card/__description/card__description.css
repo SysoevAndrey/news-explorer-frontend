@@ -5,3 +5,9 @@
   flex-direction: column;
   padding: 16px 24px 28px;
 }
+
+@media screen and (max-width: 768px) {
+  .card__description {
+    padding: 16px;
+  }
+}
