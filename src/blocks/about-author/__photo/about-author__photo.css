@@ -4,3 +4,10 @@
   border-radius: 50%;
   margin-right: 56px;
 }
+
+@media screen and (max-width: 768px) {
+  .about-author__photo {
+    width: 232px;
+    height: 232px;
+  }
+}

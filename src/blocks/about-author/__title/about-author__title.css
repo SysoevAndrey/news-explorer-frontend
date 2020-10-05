@@ -7,3 +7,10 @@
   margin: 0;
   padding-top: 50px;
 }
+
+@media screen and (max-width: 768px) {
+  .about-author__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
