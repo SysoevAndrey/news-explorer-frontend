@@ -10,3 +10,9 @@
   padding: 160px 29% 80px;
   color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+  .search {
+    padding: 104px 21% 48px;
+  }
+}

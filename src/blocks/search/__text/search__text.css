@@ -5,3 +5,9 @@
   padding-top: 32px;
   margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .search__text {
+    padding-top: 16px;
+  }
+}

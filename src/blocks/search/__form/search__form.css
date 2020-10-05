@@ -2,3 +2,9 @@
   position: relative;
   padding-top: 64px;
 }
+
+@media screen and (max-width: 768px) {
+  .search__form {
+    padding-top: 48px;
+  }
+}
