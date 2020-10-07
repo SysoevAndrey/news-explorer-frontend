@@ -17,3 +17,10 @@
 .card__delete-icon:hover~.card__additional {
   display: flex;
 }
+
+@media screen and (max-width: 768px) {
+  .card__delete-icon {
+    top: 8px;
+    right: 8px;
+  }
+}

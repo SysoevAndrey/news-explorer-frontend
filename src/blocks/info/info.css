@@ -9,3 +9,9 @@
   padding: 40px 104px 56px;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 768px) {
+  .info {
+    padding: 24px 40px 32px;
+  }
+}

@@ -4,3 +4,11 @@
   line-height: 24px;
   margin: 29px 0 0;
 }
+
+@media screen and (max-width: 768px) {
+  .info__keys {
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 15px;
+  }
+}

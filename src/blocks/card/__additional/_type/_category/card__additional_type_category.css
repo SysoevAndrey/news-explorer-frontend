@@ -4,3 +4,9 @@
   font-size: 14px;
   line-height: 24px;
 }
+
+@media screen and (max-width: 768px) {
+  .card__additional.card__additional_type_category {
+    left: 8px;
+  }
+}
