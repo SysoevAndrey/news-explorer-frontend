@@ -1,3 +1,9 @@
 .header__list-item_current {
   border-bottom: 3px solid #fff;
 }
+
+@media screen and (max-width: 320px) {
+  .header__list-item_current {
+    border-bottom: 0;
+  }
+}

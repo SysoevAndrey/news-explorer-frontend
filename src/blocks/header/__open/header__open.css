@@ -1,0 +1,23 @@
+.header__open {
+  display: none;
+}
+
+@media screen and (max-width: 320px) {
+  .header__open {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url(../../../images/mobile/icon/open.svg) center no-repeat;
+    background-size: contain;
+    border: 0;
+    outline: none;
+    transition: .1s linear;
+  }
+
+  .header__open:active {
+    opacity: .7;
+  }
+}

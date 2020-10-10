@@ -1,6 +1,7 @@
 @import url(./_light/header_light.css);
 @import url(./__title/header__title.css);
 @import url(./__container/header__container.css);
+@import url(./__container/_is-opened/header__container_is-opened.css);
 @import url(./__list/header__list.css);
 @import url(./__list-item/header__list-item.css);
 @import url(./__list-item/_current/header__list-item_current.css);
@@ -10,6 +11,9 @@
 @import url(./__button/_light/header__button_light.css);
 @import url(./__button-text/header__button-text.css);
 @import url(./__button-text/_light/header__button-text_light.css);
+@import url(./_dark/header_dark.css);
+@import url(./__open/header__open.css);
+@import url(./__open/_close/header__open_close.css);
 .header {
   position: absolute;
   box-sizing: border-box;
@@ -33,5 +37,14 @@
   .header {
     height: 66px;
     padding: 0 5.2%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    height: 56px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
   }
 }

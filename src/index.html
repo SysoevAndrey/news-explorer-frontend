@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Andrey Sysoev" />
     <meta name="description" content="News Explorer page" />
     <title>Главная</title>
@@ -17,6 +17,7 @@
     <div class="root">
       <header class="header">
         <p class="header__title">NewsExplorer</p>
+        <button class="header__open"></button>
         <nav class="header__container">
           <ul class="header__list">
             <li class="header__list-item header__list-item_current">
@@ -25,15 +26,15 @@
             <li class="header__list-item">
               <a href="saved.html" class="header__link">Сохраненные статьи</a>
             </li>
-            <button class="button header__button">
-              <p class="header__button-text">Андрей</p>
-              <img
-                src="<%=require('./images/logout.svg').default %>"
-                alt=""
-                class="header__button-icon"
-              />
-            </button>
           </ul>
+          <button class="button header__button">
+            <p class="header__button-text">Андрей</p>
+            <img
+              src="<%=require('./images/logout.svg').default %>"
+              alt=""
+              class="header__button-icon"
+            />
+          </button>
         </nav>
       </header>
       <div class="search">

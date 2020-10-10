@@ -22,3 +22,12 @@
     height: 40px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .header__button {
+    width: 288px;
+    height: 78px;
+    margin: 0;
+    justify-content: space-around;
+  }
+}
