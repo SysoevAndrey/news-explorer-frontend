@@ -14,3 +14,10 @@
     padding-top: 32px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .results__container {
+    grid-template-columns: repeat(auto-fill, 288px);
+    padding-top: 24px;
+  }
+}

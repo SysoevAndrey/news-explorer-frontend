@@ -12,3 +12,9 @@
     min-height: 270px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .card__description {
+    min-height: 244px;
+  }
+}

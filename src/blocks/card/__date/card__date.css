@@ -13,3 +13,9 @@
     letter-spacing: 0;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .card__date {
+    margin-top: 2px;
+  }
+}

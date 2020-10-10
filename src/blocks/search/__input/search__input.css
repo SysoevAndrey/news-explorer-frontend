@@ -22,3 +22,9 @@
     height: 56px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .search__input {
+    padding-left: 15px;
+  }
+}

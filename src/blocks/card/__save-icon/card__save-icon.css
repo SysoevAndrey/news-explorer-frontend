@@ -24,3 +24,10 @@
     right: 8px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .card__save-icon {
+    top: 16px;
+    right: 16px;
+  }
+}

@@ -14,3 +14,9 @@
     margin-top: 10px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .card__text {
+    margin-bottom: 10px;
+  }
+}

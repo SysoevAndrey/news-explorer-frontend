@@ -24,3 +24,9 @@
     top: 8px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .card__additional {
+    top: 16px;
+  }
+}
