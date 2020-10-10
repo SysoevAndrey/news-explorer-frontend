@@ -1,15 +1,12 @@
-.footer__list {
+.footer__container {
   display: flex;
   justify-content: space-between;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
 
 @media screen and (max-width: 320px) {
-  .footer__list {
-    flex-wrap: wrap;
+  .footer__container {
+    width: 100%;
     align-items: flex-start;
-    min-width: 80px;
   }
 }
