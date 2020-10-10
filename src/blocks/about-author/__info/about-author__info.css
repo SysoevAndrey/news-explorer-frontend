@@ -9,3 +9,9 @@
     width: 424px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .about-author__info {
+    width: 100%;
+  }
+}

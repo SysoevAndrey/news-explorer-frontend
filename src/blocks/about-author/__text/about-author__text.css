@@ -12,3 +12,9 @@
     padding-top: 9px;
   }
 }
+
+@media screen and (max-width: 320px) {
+ .about-author__text {
+   margin-top: 15px;
+ }
+}
