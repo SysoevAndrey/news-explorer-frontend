@@ -28,6 +28,14 @@
   .search__button {
     height: 56px;
     width: 155px;
-    
+
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .search__button {
+    position: relative;
+    margin-top: 16px;
+    width: 100%;
   }
 }

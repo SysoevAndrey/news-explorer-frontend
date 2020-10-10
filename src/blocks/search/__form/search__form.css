@@ -8,3 +8,9 @@
     padding-top: 48px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .search__form {
+    margin-top: 74px;
+  }
+}
