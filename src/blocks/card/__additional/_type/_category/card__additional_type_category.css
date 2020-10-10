@@ -10,3 +10,9 @@
     left: 8px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .card__additional.card__additional_type_category {
+    left: 16px;
+  }
+}
