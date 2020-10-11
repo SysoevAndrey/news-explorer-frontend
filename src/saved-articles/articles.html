@@ -2,15 +2,15 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Andrey Sysoev" />
     <meta name="description" content="Saved articles page" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Сохраненные статьи</title>
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>" />
     <link
       rel="icon"
       type="image/svg"
-      href="<%=require('./images/favicon.svg').default %>"
+      href="<%=require('../images/favicon.svg').default %>"
     />
   </head>
   <body>
@@ -21,16 +21,16 @@
         <nav class="header__container">
           <ul class="header__list">
             <li class="header__list-item">
-              <a href="index.html" class="header__link">Главная</a>
+              <a href="./index.html" class="header__link">Главная</a>
             </li>
             <li class="header__list-item header__list-item_current-light">
-              <a href="saved.html" class="header__link">Сохраненные статьи</a>
+              <a href="./articles.html" class="header__link">Сохраненные статьи</a>
             </li>
           </ul>
           <button class="button header__button header__button_light">
-            <p class="header__button-text header__button-text_light">Андрей</p>
+            <span class="header__button-text header__button-text_light">Андрей</span>
             <img
-              src="<%=require('./images/logout-light.svg').default %>"
+              src="<%=require('../images/logout-light.svg').default %>"
               alt=""
               class="header__button-icon"
             />
@@ -56,7 +56,7 @@
               Убрать из сохранённых
             </p>
             <img
-              src="<%=require('./images/cards/image_08.jpg').default %>"
+              src="<%=require('../images/cards/image_08.jpg').default %>"
               alt=""
               class="card__image"
             />
@@ -78,7 +78,7 @@
               Убрать из сохранённых
             </p>
             <img
-              src="<%=require('./images/cards/image_08.jpg').default %>"
+              src="<%=require('../images/cards/image_08.jpg').default %>"
               alt=""
               class="card__image"
             />
@@ -102,7 +102,7 @@
               Убрать из сохранённых
             </p>
             <img
-              src="<%=require('./images/cards/image_08.jpg').default %>"
+              src="<%=require('../images/cards/image_08.jpg').default %>"
               alt=""
               class="card__image"
             />
@@ -126,7 +126,7 @@
               Убрать из сохранённых
             </p>
             <img
-              src="<%=require('./images/cards/image_08.jpg').default %>"
+              src="<%=require('../images/cards/image_08.jpg').default %>"
               alt=""
               class="card__image"
             />
@@ -150,7 +150,7 @@
               Убрать из сохранённых
             </p>
             <img
-              src="<%=require('./images/cards/image_08.jpg').default %>"
+              src="<%=require('../images/cards/image_08.jpg').default %>"
               alt=""
               class="card__image"
             />
@@ -190,7 +190,7 @@
                 target="blank"
               >
                 <img
-                  src="<%=require('./images/github.svg').default %>"
+                  src="<%=require('../images/github.svg').default %>"
                   alt="Логотип Github"
                   class="footer__icon"
                 />
@@ -203,7 +203,7 @@
                 target="blank"
               >
                 <img
-                  src="<%=require('./images/facebook.svg').default %>"
+                  src="<%=require('../images/facebook.svg').default %>"
                   alt="Логотип Facebook"
                   class="footer__icon"
                 />

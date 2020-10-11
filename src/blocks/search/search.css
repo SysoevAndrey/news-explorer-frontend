@@ -5,7 +5,7 @@
 @import url(./__button/search__button.css);
 
 .search {
-  background: url(../../images/phone.jpg) center no-repeat;
+  background: url('../../images/phone.jpg') center no-repeat;
   background-size: cover;
   padding: 160px 29% 80px;
   color: #fff;

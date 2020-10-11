@@ -1,0 +1,6 @@
+@import url(./_dark/page_dark.css);
+
+page {
+  width: 100%;
+  position: relative;
+}

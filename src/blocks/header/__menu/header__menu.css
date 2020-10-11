@@ -1,0 +1,10 @@
+.header__menu {
+  height: 100%;
+}
+
+@media screen and (max-width: 320px) {
+  .header__menu {
+    position: absolute;
+    top: 56px;
+  }
+}

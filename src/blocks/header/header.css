@@ -1,5 +1,7 @@
 @import url(./_light/header_light.css);
 @import url(./__title/header__title.css);
+@import url(./__menu/header__menu.css);
+@import url(./__menu/_is-opened/header__menu_is-opened.css);
 @import url(./__container/header__container.css);
 @import url(./__container/_is-opened/header__container_is-opened.css);
 @import url(./__list/header__list.css);
@@ -45,6 +47,7 @@
   .header {
     height: 56px;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 0;
   }
