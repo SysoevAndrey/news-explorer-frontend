@@ -24,3 +24,9 @@
   justify-content: center;
   display: none;
 }
+
+@media screen and (max-width: 320px) {
+  .popup {
+    align-items: flex-start;
+  }
+}
