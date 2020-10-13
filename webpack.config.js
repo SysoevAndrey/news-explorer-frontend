@@ -28,10 +28,11 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|ico|svg)$/,
         use: [
-          "file-loader?name=./images/[name].[ext]",
           {
-            loader: "image-webpack-loader",
-            options: {},
+            loader: "file-loader",
+            options: {
+              name: "./images/[name].[ext]",
+            },
           },
         ],
       },
@@ -42,7 +43,12 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+          isDev
+            ? "style-loader"
+            : {
+                loader: MiniCssExtractPlugin.loader,
+                options: { publicPath: "../" },
+              },
           {
             loader: "css-loader",
             options: {
@@ -56,7 +62,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "./[name].[contenthash].css",
+      filename: "./css/[name].[contenthash].css",
     }),
     new HtmlWebpackPlugin({
       inject: false,
