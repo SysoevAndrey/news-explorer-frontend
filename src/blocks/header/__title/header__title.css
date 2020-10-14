@@ -7,7 +7,7 @@
   letter-spacing: -0.3px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 575px) {
   .header__title {
     padding: 16px;
     font-size: 16px;

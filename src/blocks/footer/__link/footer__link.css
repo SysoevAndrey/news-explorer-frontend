@@ -5,7 +5,7 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .footer__link {
     line-height: 48px;
   }

@@ -8,7 +8,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .footer__list-icon {
     margin: 0 0 0 10px;
   }

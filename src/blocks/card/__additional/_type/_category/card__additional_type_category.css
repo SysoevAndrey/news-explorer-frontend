@@ -11,7 +11,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .card__additional.card__additional_type_category {
     left: 16px;
   }

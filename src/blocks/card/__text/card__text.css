@@ -15,7 +15,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .card__text {
     margin-bottom: 10px;
   }

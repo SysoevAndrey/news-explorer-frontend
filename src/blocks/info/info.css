@@ -16,7 +16,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .info {
     padding: 7px 16px 33px;
   }

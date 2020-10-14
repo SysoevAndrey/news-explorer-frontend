@@ -1,4 +1,4 @@
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .header__open_light {
     background: url(../../../../images/mobile/icon/open-light.svg);
   }

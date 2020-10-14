@@ -13,7 +13,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
  .about-author__text {
    margin-top: 15px;
  }

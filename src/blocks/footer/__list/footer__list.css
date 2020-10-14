@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .footer__list {
     flex-wrap: wrap;
     align-items: flex-start;

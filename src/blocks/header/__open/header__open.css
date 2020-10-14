@@ -2,7 +2,7 @@
   display: none;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 575px) {
   .header__open {
     position: absolute;
     top: 16px;

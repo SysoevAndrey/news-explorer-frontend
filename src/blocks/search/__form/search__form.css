@@ -9,7 +9,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .search__form {
     margin-top: 74px;
   }

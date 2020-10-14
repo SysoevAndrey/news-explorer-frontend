@@ -11,13 +11,13 @@
   color: #fff;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .search {
     padding: 104px 21% 48px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .search {
     padding: 86px 16px 32px;
   }
