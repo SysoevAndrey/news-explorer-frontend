@@ -1,0 +1,24 @@
+@import url(./__title/search__title.css);
+@import url(./__text/search__text.css);
+@import url(./__form/search__form.css);
+@import url(./__input/search__input.css);
+@import url(./__button/search__button.css);
+
+.search {
+  background: url('../../images/phone.jpg') center no-repeat;
+  background-size: cover;
+  padding: 160px 29% 80px;
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .search {
+    padding: 104px 21% 48px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .search {
+    padding: 86px 16px 32px;
+  }
+}

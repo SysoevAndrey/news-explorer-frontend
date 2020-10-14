@@ -1,0 +1,18 @@
+.card__additional.card__additional_type_category {
+  display: flex;
+  left: 24px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .card__additional.card__additional_type_category {
+    left: 8px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .card__additional.card__additional_type_category {
+    left: 16px;
+  }
+}

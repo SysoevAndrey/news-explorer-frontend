@@ -1,0 +1,33 @@
+.card__save-icon {
+  position: absolute;
+  background: url(../../../images/save.svg) center no-repeat;
+  width: 40px;
+  height: 40px;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: .1s linear;
+}
+
+.card__save-icon:hover {
+  background: url(../../../images/save-hover.svg);
+}
+
+.card__save-icon:hover~.card__additional {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .card__save-icon {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .card__save-icon {
+    top: 16px;
+    right: 16px;
+  }
+}

@@ -1,0 +1,54 @@
+@import url(./_light/header_light.css);
+@import url(./__title/header__title.css);
+@import url(./__menu/header__menu.css);
+@import url(./__menu/_is-opened/header__menu_is-opened.css);
+@import url(./__container/header__container.css);
+@import url(./__container/_is-opened/header__container_is-opened.css);
+@import url(./__list/header__list.css);
+@import url(./__list-item/header__list-item.css);
+@import url(./__list-item/_current/header__list-item_current.css);
+@import url(./__list-item/_current-light/header__list-item_current-light.css);
+@import url(./__link/header__link.css);
+@import url(./__button/header__button.css);
+@import url(./__button/_light/header__button_light.css);
+@import url(./__button-text/header__button-text.css);
+@import url(./__button-text/_light/header__button-text_light.css);
+@import url(./_dark/header_dark.css);
+@import url(./__open/header__open.css);
+@import url(./__open/_close/header__open_close.css);
+@import url(./__open/_light/header__open_light.css);
+.header {
+  position: absolute;
+  box-sizing: border-box;
+  height: 80px;
+  width: 1440px;
+  padding: 0 7.2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(196, 196, 196, 0.01);
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 1440px) {
+  .header {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .header {
+    height: 66px;
+    padding: 0 5.2%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header {
+    height: 56px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+  }
+}

@@ -1,0 +1,7 @@
+.card__save-icon_saved {
+  background: url(../../../../images/save-true.svg);
+}
+
+.card__save-icon_saved:hover {
+  background: url(../../../../images/save-true.svg);
+}

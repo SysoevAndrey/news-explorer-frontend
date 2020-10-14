@@ -1,0 +1,12 @@
+.card__additional_type_save {
+  right: 69px;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .card__additional_type_save {
+    right: 56px;
+    left: 8px;
+  }
+}

@@ -1,0 +1,21 @@
+.card__date {
+  font-family: 'Source Sans Pro';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #B6BCBF;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+@media screen and (max-width: 768px) {
+  .card__date {
+    letter-spacing: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .card__date {
+    margin-top: 2px;
+  }
+}

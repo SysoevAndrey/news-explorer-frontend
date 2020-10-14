@@ -1,0 +1,9 @@
+.results.results_saved {
+  padding: 0 7.1% 62px;
+}
+
+@media screen and (max-width: 768px) {
+  .results.results_saved {
+    padding: 0 40px 40px;
+  }
+}

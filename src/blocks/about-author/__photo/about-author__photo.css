@@ -1,0 +1,22 @@
+.about-author__photo {
+  width: 37.7%;
+  height: 37.7%;
+  border-radius: 50%;
+  margin-right: 56px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-author__photo {
+    width: 232px;
+    height: 232px;
+    margin-right: 32px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .about-author__photo {
+    width: 272px;
+    height: 272px;
+    margin-right: 0;
+  }
+}

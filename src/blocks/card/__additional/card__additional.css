@@ -1,0 +1,32 @@
+@import url(./_type/_save/card__additional_type_save.css);
+@import url(./_type/_delete/card__additional_type_delete.css);
+@import url(./_type/_category/card__additional_type_category.css);
+
+.card__additional {
+  position: absolute;
+  top: 24px;
+  background: #FFFFFF;
+  padding: 12px;
+  margin: 0;
+  font-weight: 500;
+  box-sizing: border-box;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  color: #000;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .card__additional {
+    top: 8px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .card__additional {
+    top: 16px;
+  }
+}

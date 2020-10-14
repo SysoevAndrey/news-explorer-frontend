@@ -1,0 +1,12 @@
+.footer__link {
+  font-size: 18px;
+  line-height: 24px;
+  color: #1A1B22;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 375px) {
+  .footer__link {
+    line-height: 48px;
+  }
+}

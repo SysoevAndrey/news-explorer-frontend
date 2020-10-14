@@ -1,0 +1,9 @@
+.popup__link {
+  color: #2F71E5;
+  cursor: pointer;
+  transition: .1s linear;
+}
+
+.popup__link:hover {
+  opacity: .7;
+}

@@ -1,0 +1,16 @@
+.results__title {
+  font-family: 'Roboto Slab', Arial;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  margin: 0;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+  .results__title {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}

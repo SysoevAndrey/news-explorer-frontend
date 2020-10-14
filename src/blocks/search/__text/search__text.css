@@ -1,0 +1,13 @@
+.search__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  padding-top: 32px;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .search__text {
+    padding-top: 16px;
+  }
+}
