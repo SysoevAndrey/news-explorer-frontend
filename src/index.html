@@ -18,26 +18,6 @@
       <header class="header">
         <p class="header__title">NewsExplorer</p>
         <button class="header__open"></button>
-        <nav class="header__container">
-          <ul class="header__list">
-            <li class="header__list-item header__list-item_current">
-              <a href="./index.html" class="header__link">Главная</a>
-            </li>
-            <li class="header__list-item">
-              <a href="./articles.html" class="header__link"
-                >Сохраненные статьи</a
-              >
-            </li>
-          </ul>
-          <button class="button header__button">
-            <span class="header__button-text">Андрей</span>
-            <img
-              src="<%=require('./images/logout.svg').default %>"
-              alt="Выход"
-              class="header__button-icon"
-            />
-          </button>
-        </nav>
       </header>
       <div class="search">
         <h1 class="search__title">Что творится в мире?</h1>
@@ -336,6 +316,42 @@
         </div>
       </div>
     </div>
+
+    <template id="logged">
+      <nav class="header__container">
+        <ul class="header__list">
+          <li class="header__list-item header__list-item_current">
+            <a href="./index.html" class="header__link">Главная</a>
+          </li>
+          <li class="header__list-item">
+            <a href="./articles.html" class="header__link"
+              >Сохраненные статьи</a
+            >
+          </li>
+        </ul>
+        <button type="submit" class="button header__button">
+          <span class="header__button-text"></span>
+          <img
+            src="<%=require('./images/logout.svg').default %>"
+            alt="Выход"
+            class="header__button-icon"
+          />
+        </button>
+      </nav>
+    </template>
+
+    <template id="unlogged">
+      <nav class="header__container">
+        <ul class="header__list">
+          <li class="header__list-item header__list-item_current">
+            <a href="./index.html" class="header__link">Главная</a>
+          </li>
+        </ul>
+        <button type="submit" class="button header__button">
+          <span class="header__button-text">Авторизоваться</span>
+        </button>
+      </nav>
+    </template>
 
     <script src="<%=htmlWebpackPlugin.files.js %>"></script>
   </body>

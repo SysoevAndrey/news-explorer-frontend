@@ -18,26 +18,6 @@
       <header class="header header_light">
         <p class="header__title">NewsExplorer</p>
         <button class="header__open header__open_light"></button>
-        <nav class="header__container">
-          <ul class="header__list">
-            <li class="header__list-item">
-              <a href="./index.html" class="header__link">Главная</a>
-            </li>
-            <li class="header__list-item header__list-item_current-light">
-              <a href="./articles.html" class="header__link">Сохраненные статьи</a>
-            </li>
-          </ul>
-          <button class="button header__button header__button_light">
-            <span class="header__button-text header__button-text_light"
-              >Андрей</span
-            >
-            <img
-              src="<%=require('../images/logout-light.svg').default %>"
-              alt="Выход"
-              class="header__button-icon"
-            />
-          </button>
-        </nav>
       </header>
       <div class="info">
         <p class="info__saved">Сохранённые статьи</p>
@@ -214,6 +194,30 @@
           </ul>
         </nav>
       </footer>
+
+      <template id="logged">
+        <nav class="header__container">
+          <ul class="header__list">
+            <li class="header__list-item">
+              <a href="../index.html" class="header__link">Главная</a>
+            </li>
+            <li class="header__list-item header__list-item_current">
+              <a href="./articles.html" class="header__link"
+                >Сохраненные статьи</a
+              >
+            </li>
+          </ul>
+          <button type="submit" class="button header__button">
+            <span class="header__button-text"></span>
+            <img
+              src="<%=require('../images/logout-light.svg').default %>"
+              alt="Выход"
+              class="header__button-icon"
+            />
+          </button>
+        </nav>
+      </template>
+
     </div>
     <script src="<%=htmlWebpackPlugin.files.js %>"></script>
   </body>

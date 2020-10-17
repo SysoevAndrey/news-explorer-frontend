@@ -11,7 +11,7 @@ const presets = [
           },
           useBuiltIns: 'usage',
           corejs: '3.4.1'
-      }
+      },
   ],
 ];
 
