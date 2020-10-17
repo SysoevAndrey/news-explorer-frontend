@@ -1,7 +1,9 @@
 export default class Header {
-  constructor(header, theme, userName) {
+  constructor(header, theme, userName, login, logout) {
     this.header = header;
     this.theme = theme;
+    this.login = login;
+    this.logout = logout;
 
     this.props = {
       isLoggedIn: false,
@@ -10,34 +12,45 @@ export default class Header {
   }
 
   render = () => {
-    let headerList;
-
     if (this.props.isLoggedIn) {
-      headerList = document.querySelector("#logged").content.cloneNode(true);
+      this.headerList = document.querySelector("#logged").content.cloneNode(true);
 
-      headerList.querySelector(
+      this.headerList.querySelector(
         ".header__button-text"
       ).textContent = this.props.userName;
+
+      this.setEventListeners("logout");
     } else {
-      headerList = document.querySelector("#unlogged").content.cloneNode(true);
+      this.headerList = document.querySelector("#unlogged").content.cloneNode(true);
+      this.setEventListeners("login");
     }
 
     if (this.theme === "light") {
       this.header.classList.add("header_light");
 
-      headerList
+      this.headerList
         .querySelector(".header__list-item_current")
         .classList.add("header__list-item_current-light");
 
-      headerList
+      this.headerList
         .querySelector(".header__button")
         .classList.add("header__button_light");
-
-        headerList
+p
+      this.headerList
         .querySelector(".header__button-text")
         .classList.add("header__button-text_light");
     }
 
-    this.header.appendChild(headerList.querySelector(".header__container"));
+    this.header.appendChild(this.headerList.querySelector(".header__container"));
+  };
+
+  setEventListeners = (action) => {
+    const button = this.headerList.querySelector(".header__button");
+
+    if (action === 'login') {
+      button.addEventListener('click', this.login);
+    } else {
+      button.addEventListener('click', this.logout);
+    }
   };
 }
