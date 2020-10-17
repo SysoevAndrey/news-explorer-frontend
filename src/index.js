@@ -40,6 +40,7 @@ import Popup from "./js/components/Popup";
   };
 
   const logout = () => {
+    alert('Вы действительно хотите выйти?')
     console.log("logout");
   };
 

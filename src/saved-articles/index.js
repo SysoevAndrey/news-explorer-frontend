@@ -4,6 +4,11 @@ import Header from '../js/components/Header';
 
 const headerItem = document.querySelector(".header");
 
-const header = new Header(headerItem, 'light', 'Andrey');
+const logout = () => {
+  alert('Вы действительно хотите выйти?')
+  console.log("logout");
+};
+
+const header = new Header(headerItem, 'light', 'Andrey', null, logout);
 
 header.render();

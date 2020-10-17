@@ -35,7 +35,7 @@ export default class Header {
       this.headerList
         .querySelector(".header__button")
         .classList.add("header__button_light");
-p
+
       this.headerList
         .querySelector(".header__button-text")
         .classList.add("header__button-text_light");
