@@ -2,12 +2,17 @@ import "./pages/main.css";
 
 import Header from "./js/components/Header";
 import Popup from "./js/components/Popup";
+import Form from "./js/components/Form";
 
 (function () {
   const headerItem = document.querySelector(".header");
   const popupItem = document.querySelector(".popup");
   const loginPopupItem = document.querySelector(".login-popup");
   const signupPopupItem = document.querySelector(".signup-popup");
+  const searchFormItem = document.querySelector(".search__form");
+
+  const searchForm = new Form("search", searchFormItem);
+  searchForm.setEventListeners();
 
   const changePopup = (type, currentPopup) => {
     currentPopup.close();
@@ -40,7 +45,7 @@ import Popup from "./js/components/Popup";
   };
 
   const logout = () => {
-    alert('Вы действительно хотите выйти?')
+    alert("Вы действительно хотите выйти?");
     console.log("logout");
   };
 
