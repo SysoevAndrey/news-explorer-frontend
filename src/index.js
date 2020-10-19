@@ -4,12 +4,35 @@ import Header from "./js/components/Header";
 import Popup from "./js/components/Popup";
 import Form from "./js/components/Form";
 
+import NewsApi from "./js/api/NewsApi";
+
+import dateParser from "./js/utils/date-parser";
+
 (function () {
   const headerItem = document.querySelector(".header");
   const popupItem = document.querySelector(".popup");
   const loginPopupItem = document.querySelector(".login-popup");
   const signupPopupItem = document.querySelector(".signup-popup");
   const searchFormItem = document.querySelector(".search__form");
+
+  const newsApi = new NewsApi(
+    "Москва",
+    dateParser(),
+    "publishedAt",
+    "100",
+    "ru",
+    "393933fc023c43db92ea162494a5ec25"
+  );
+
+  let cardsData;
+
+  newsApi
+    .getNews()
+    .then((res) => {
+      cardsData = res.articles;
+      console.log(cardsData);
+    })
+    .catch((err) => console.log(err.message));
 
   const searchForm = new Form("search", searchFormItem);
   searchForm.setEventListeners();
