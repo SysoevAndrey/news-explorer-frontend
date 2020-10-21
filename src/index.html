@@ -25,12 +25,13 @@
           Находите самые свежие статьи на любую тему и сохраняйте в
           своём&nbsp;личном кабинете.
         </p>
-      <form class="search__form" name="search">
+        <form class="search__form" name="search">
           <input
             type="text"
             class="input search__input"
             placeholder="Введите тему новости"
             name="search"
+            autocomplete="off"
           />
           <button class="button search__button">Искать</button>
           <p class="error search__server-error"></p>
@@ -43,75 +44,7 @@
         </div>
         <div class="results__found">
           <h2 class="results__title">Результаты поиска</h2>
-          <div class="results__container">
-            <div class="card">
-              <p class="card__additional"></p>
-              <button class="button card__save-icon"></button>
-              <p class="card__additional card__additional_type_save">
-                Войдите, чтобы сохранять статьи
-              </p>
-              <img
-                src="<%=require('./images/cards/image_08.jpg').default %>"
-                alt="Цветок"
-                class="card__image"
-              />
-              <div class="card__description">
-                <p class="card__date">2 августа, 2019</p>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад
-                  здесь начала складываться система национальных парков –
-                  охраняемых территорий, где и сегодня каждый может приобщиться
-                  к природе.
-                </p>
-                <h4 class="card__source">Лента.ру</h4>
-              </div>
-            </div>
-            <div class="card">
-              <p class="card__additional"></p>
-              <button
-                class="button card__save-icon card__save-icon_saved"
-              ></button>
-              <p class="card__additional card__additional_type_save">
-                Войдите, чтобы сохранять статьи
-              </p>
-              <img
-                src="<%=require('./images/cards/image_07.jpg').default %>"
-                alt="Листья"
-                class="card__image"
-              />
-              <div class="card__description">
-                <p class="card__date">2 августа, 2019</p>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад
-                  здесь начала складываться система национальных парков...
-                </p>
-                <h4 class="card__source">Медуза</h4>
-              </div>
-            </div>
-            <div class="card">
-              <p class="card__additional"></p>
-              <button class="button card__save-icon"></button>
-              <p class="card__additional card__additional_type_save">
-                Войдите, чтобы сохранять статьи
-              </p>
-              <img
-                src="<%=require('./images/cards/image_04.jpg').default %>"
-                alt="Зеленые листия цветка"
-                class="card__image"
-              />
-              <div class="card__description">
-                <p class="card__date">2 августа, 2019</p>
-                <h3 class="card__title">Национальное достояние – парки</h3>
-                <p class="card__text">
-                  В 2016 году Америка отмечала важный юбилей: сто лет назад
-                  здесь начала складываться система национальных парков...
-                </p>
-                <h4 class="card__source">Риа</h4>
-              </div>
-            </div>
-          </div>
+          <div class="results__container"></div>
           <button class="button results__button">Показать еще</button>
         </div>
         <div class="results__not-found">
@@ -193,6 +126,28 @@
 
       <div class="popup"></div>
     </div>
+
+    <template class="card">
+      <p class="card__additional"></p>
+      <button class="button card__save-icon card__save-icon_saved"></button>
+      <p class="card__additional card__additional_type_save">
+        Войдите, чтобы сохранять статьи
+      </p>
+      <img
+        src="<%=require('./images/cards/image_07.jpg').default %>"
+        alt="Листья"
+        class="card__image"
+      />
+      <div class="card__description">
+        <p class="card__date">2 августа, 2019</p>
+        <h3 class="card__title">Национальное достояние – парки</h3>
+        <p class="card__text">
+          В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
+          складываться система национальных парков...
+        </p>
+        <h4 class="card__source">Медуза</h4>
+      </div>
+    </template>
 
     <template class="popup login-popup">
       <div class="popup__content login-popup__content">

@@ -8,6 +8,10 @@ export default class NewsApi {
     this.apiKey = apiKey;
   }
 
+  setTopic = (topic) => {
+    this.q = topic;
+  }
+
   getNews = async () => {
     const res = await fetch(
       `http://newsapi.org/v2/everything?q=${this.q}&from=${this.from}&sortBy=${this.sortBy}&pageSize=${this.pageSize}&language=${this.language}&apiKey=${this.apiKey}`

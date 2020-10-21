@@ -1,9 +1,10 @@
 export default class Form {
-  constructor(type, form, formSelectors, errorMessages) {
+  constructor(type, form, formSelectors, errorMessages, sendData) {
     this.type = type;
     this.form = form;
     this.formSelectors = formSelectors;
     this.errorMessages = errorMessages;
+    this.sendData = sendData;
   }
 
   setServerError = (input) => {
@@ -94,7 +95,7 @@ export default class Form {
         break;
     }
 
-    console.log(data);
+    this.sendData(data, this.type);
   };
 
   setForm = (form) => {

@@ -14,6 +14,9 @@ import dateParser from "./js/utils/date-parser";
   const loginPopupItem = document.querySelector(".login-popup");
   const signupPopupItem = document.querySelector(".signup-popup");
   const searchFormItem = document.querySelector(".search__form");
+  const resultsBlock = document.querySelector(".results");
+  const resultsLoadingBlock = resultsBlock.querySelector(".results__loading");
+  const resultsFoundBlock = resultsBlock.querySelector(".results__found");
 
   const errorMessages = {
     valueMissing: "Это обязательное поле",
@@ -29,7 +32,7 @@ import dateParser from "./js/utils/date-parser";
   };
 
   const newsApi = new NewsApi(
-    "Apple",
+    null,
     dateParser(),
     "publishedAt",
     "100",
@@ -39,22 +42,53 @@ import dateParser from "./js/utils/date-parser";
 
   let cardsData;
 
-  newsApi
-    .getNews()
-    .then((res) => {
-      cardsData = res.articles;
-      console.log(cardsData);
-    })
-    .catch((err) => console.log(err.message));
+  const sendData = (data, type) => {
+    switch (type) {
+      case "search":
+        resultsBlock.style.display = "flex";
+        resultsLoadingBlock.style.display = "flex";
+        newsApi.setTopic(data);
+        newsApi
+          .getNews()
+          .then((data) => {
+            resultsLoadingBlock.style.display = "none";
+            resultsFoundBlock.style.display = "flex";
+            cardsData = data.articles;
+            console.log(cardsData);
+          })
+          .catch((err) => console.log(err.message));
+
+        break;
+      case "login":
+        // login(data);
+        break;
+      case "signup":
+        // signupForm(data);
+        break;
+    }
+  };
 
   const searchForm = new Form(
     "search",
     searchFormItem,
     formSelectors,
-    errorMessages
+    errorMessages,
+    sendData
   );
-  const loginForm = new Form("login", null, formSelectors, errorMessages);
-  const signupForm = new Form("signup", null, formSelectors, errorMessages);
+  const loginForm = new Form(
+    "login",
+    null,
+    formSelectors,
+    errorMessages,
+    sendData
+  );
+  const signupForm = new Form(
+    "signup",
+    null,
+    formSelectors,
+    errorMessages,
+    sendData
+  );
   searchForm.setEventListeners();
 
   const changePopup = (type, currentPopup, login) => {
