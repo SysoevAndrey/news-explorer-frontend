@@ -1,9 +1,11 @@
 export default class Popup {
-  constructor(popup, content, changePopup, type) {
+  constructor(popup, content, changePopup, type, setFormListeners, removeFormListeners) {
     this.popup = popup;
     this.content = content.querySelector(".popup__content");
     this.changePopup = changePopup;
     this.type = type;
+    this.setFormListeners = setFormListeners;
+    this.removeFormListeners = removeFormListeners;
   }
 
   setContent = () => {
@@ -16,10 +18,12 @@ export default class Popup {
 
   open = () => {
     this.popup.classList.add("popup_is-opened");
+    this.setFormListeners(this.content.querySelector('.popup__form'));
   };
 
   close = () => {
     this.popup.classList.remove("popup_is-opened");
+    this.removeFormListeners(this.content.querySelector('.popup__form'));
     this.clearContent();
   };
 
@@ -30,6 +34,6 @@ export default class Popup {
 
     this.content
       .querySelector(".popup__link")
-      .addEventListener("click", this.changePopup.bind(null, this.type, this));
+      .addEventListener("click", this.changePopup.bind(null, this.type, this, false));
   };
 }
