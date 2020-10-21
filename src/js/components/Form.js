@@ -6,41 +6,14 @@ export default class Form {
     this.errorMessages = errorMessages;
   }
 
-  setServerError = () => {};
-
-  // -----------------------------------------------
-  isValidate = (input) => {
-    input.setCustomValidity("");
-    if (input.validity.valueMissing) {
-      input.setCustomValidity(this.errorMessages.valueMissing);
-      return false;
-    }
-
-    if (input.validity.tooShort || input.validity.tooLong) {
-      if (input.validity.tooShort === 6) {
-        input.setCustomValidity(this.errorMessages.tooShort6);
-      } else {
-        input.setCustomValidity(this.errorMessages.tooShort2);
-      }
-      return false;
-    }
-
-    if (input.validity.typeMismatch && input.type === "url") {
-      input.setCustomValidity(this.errorMessages.typeMismatch);
-      return false;
-    }
-
-    return input.checkValidity();
-  }
-
-  checkInputValidity = (input) => {
+  setServerError = (input) => {
     const errorMessage = this.errorElements[input.id];
 
-    const valid = this.isValidate(input);
+    const valid = this._validateInputElement(input);
     errorMessage.textContent = input.validationMessage;
 
     return valid;
-  }
+  };
 
   setSubmitButtonState = (isValid) => {
     if (isValid) {
@@ -50,22 +23,41 @@ export default class Form {
       this.button.classList.remove(this.formSelectors.buttonActive);
       this.button.setAttribute("disabled", true);
     }
-  }
+  };
 
-  _validateInputElement = (evt) => {
-    this.checkInputValidity(evt.target);
+  _validateInputElement = (input) => {
+    input.setCustomValidity("");
+    if (input.validity.valueMissing) {
+      input.setCustomValidity(this.errorMessages.valueMissing);
+      return false;
+    }
 
-    if (this.inputs.every(this.isValidate)) {
+    if (input.validity.tooShort || input.validity.tooLong) {
+      if (input.name === "username") {
+        input.setCustomValidity(this.errorMessages.tooShort2);
+      } else {
+        input.setCustomValidity(this.errorMessages.tooShort6);
+      }
+      return false;
+    }
+
+    if (input.validity.typeMismatch && input.type === "email") {
+      input.setCustomValidity(this.errorMessages.typeMismatch);
+      return false;
+    }
+
+    return input.checkValidity();
+  };
+
+  _validateForm = (evt) => {
+    this.setServerError(evt.target);
+
+    if (this.inputs.every(this._validateInputElement)) {
       this.isValid = true;
     } else {
       this.isValid = false;
     }
     this.setSubmitButtonState(this.isValid);
-  }
-  // -----------------------------------------------
-
-  _validateForm = (evt) => {
-    evt.preventDefault();
   };
 
   _clear = () => {
@@ -77,7 +69,33 @@ export default class Form {
     this.setSubmitButtonState(false);
   };
 
-  _getInfo = () => {};
+  _getInfo = (evt) => {
+    evt.preventDefault();
+
+    const elements = evt.target.elements;
+    let data;
+
+    switch (this.type) {
+      case 'search':
+        data = elements.search.value;
+        break;
+      case 'login':
+        data = {
+          email: elements.email.value,
+          pass: elements.pass.value,
+        };
+        break;
+      case 'signup':
+        data = {
+          email: elements.email.value,
+          pass: elements.pass.value,
+          name: elements.username.value,
+        };
+        break;
+    }
+
+    console.log(data);
+  };
 
   setForm = (form) => {
     this.form = form;
@@ -102,7 +120,10 @@ export default class Form {
 
     this.button = this.form.querySelector(this.formSelectors.button);
 
-    this.form.addEventListener("input", this._validateInputElement);
-    this.form.addEventListener("submit", this._validateForm);
+    if (this.type !== "search") {
+      this.form.addEventListener("input", this._validateForm);
+    }
+
+    this.form.addEventListener("submit", this._getInfo);
   };
 }

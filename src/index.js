@@ -19,7 +19,7 @@ import dateParser from "./js/utils/date-parser";
     valueMissing: "Это обязательное поле",
     tooShort2: "Должно быть от 2 до 30 символов",
     tooShort6: "Должно быть от 6 до 30 символов",
-    typeMismatch: "Здесь должна быть ссылка",
+    typeMismatch: "Здесь должен быть email",
   };
 
   const formSelectors = {
