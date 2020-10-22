@@ -8,6 +8,8 @@ import NewsApi from "./js/api/NewsApi";
 
 import dateParser from "./js/utils/date-parser";
 
+import { errorMessages, formSelectors, apiKey } from './js/constants/constants';
+
 (function () {
   const headerItem = document.querySelector(".header");
   const popupItem = document.querySelector(".popup");
@@ -18,26 +20,13 @@ import dateParser from "./js/utils/date-parser";
   const resultsLoadingBlock = resultsBlock.querySelector(".results__loading");
   const resultsFoundBlock = resultsBlock.querySelector(".results__found");
 
-  const errorMessages = {
-    valueMissing: "Это обязательное поле",
-    tooShort2: "Должно быть от 2 до 30 символов",
-    tooShort6: "Должно быть от 6 до 30 символов",
-    typeMismatch: "Здесь должен быть email",
-  };
-
-  const formSelectors = {
-    button: ".button",
-    buttonActive: "popup__button_active",
-    input: ".input",
-  };
-
   const newsApi = new NewsApi(
     null,
     dateParser(),
     "publishedAt",
     "100",
     "ru",
-    "393933fc023c43db92ea162494a5ec25"
+    apiKey
   );
 
   let cardsData;
