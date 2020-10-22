@@ -1,4 +1,4 @@
-import { emailExp } from '../constants/constants';
+import { emailExp } from "../constants/constants";
 
 export default class Form {
   constructor(type, form, formSelectors, errorMessages, sendData) {
@@ -9,7 +9,9 @@ export default class Form {
     this.sendData = sendData;
   }
 
-  setServerError = (input) => {
+  setServerError = () => {};
+
+  setInputError = (input) => {
     const errorMessage = this.errorElements[input.id];
 
     const valid = this._validateInputElement(input);
@@ -53,7 +55,7 @@ export default class Form {
   };
 
   _validateForm = (evt) => {
-    this.setServerError(evt.target);
+    this.setInputError(evt.target);
 
     if (this.inputs.every(this._validateInputElement)) {
       this.isValid = true;
@@ -79,16 +81,16 @@ export default class Form {
     let data;
 
     switch (this.type) {
-      case 'search':
+      case "search":
         data = elements.search.value;
         break;
-      case 'login':
+      case "login":
         data = {
           email: elements.email.value,
           pass: elements.pass.value,
         };
         break;
-      case 'signup':
+      case "signup":
         data = {
           email: elements.email.value,
           pass: elements.pass.value,
