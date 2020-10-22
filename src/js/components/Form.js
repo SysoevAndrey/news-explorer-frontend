@@ -1,3 +1,5 @@
+import { emailExp } from '../constants/constants';
+
 export default class Form {
   constructor(type, form, formSelectors, errorMessages, sendData) {
     this.type = type;
@@ -42,7 +44,7 @@ export default class Form {
       return false;
     }
 
-    if (input.validity.typeMismatch && input.type === "email") {
+    if (!emailExp.test(input.value) && input.type === "email") {
       input.setCustomValidity(this.errorMessages.typeMismatch);
       return false;
     }

@@ -13,4 +13,6 @@ const formSelectors = {
 
 const apiKey = "393933fc023c43db92ea162494a5ec25";
 
-export { errorMessages, formSelectors, apiKey };
+const emailExp = /[\w\-]+(\.[\w\-]+)*@([\w\-]+\.)+([A-Z]|[a-z])+/;
+
+export { errorMessages, formSelectors, apiKey, emailExp };
