@@ -15,4 +15,19 @@ const apiKey = "393933fc023c43db92ea162494a5ec25";
 
 const emailExp = /[\w\-]+(\.[\w\-]+)*@([\w\-]+\.)+([A-Z]|[a-z])+/;
 
-export { errorMessages, formSelectors, apiKey, emailExp };
+const months = {
+  "01": "января",
+  "02": "февраля",
+  "03": "марта",
+  "04": "апреля",
+  "05": "мая",
+  "06": "июня",
+  "07": "июля",
+  "08": "августа",
+  "09": "сентября",
+  "10": "октября",
+  "11": "ноября",
+  "12": "декабря",
+};
+
+export { errorMessages, formSelectors, apiKey, emailExp, months };

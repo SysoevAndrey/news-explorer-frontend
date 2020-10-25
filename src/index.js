@@ -3,12 +3,14 @@ import "./pages/main.css";
 import Header from "./js/components/Header";
 import Popup from "./js/components/Popup";
 import Form from "./js/components/Form";
+import NewsCardList from "./js/components/NewsCardList";
+import NewsCard from "./js/components/NewsCard";
 
 import NewsApi from "./js/api/NewsApi";
 
 import dateParser from "./js/utils/date-parser";
 
-import { errorMessages, formSelectors, apiKey } from './js/constants/constants';
+import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
 
 (function () {
   const headerItem = document.querySelector(".header");
@@ -19,6 +21,12 @@ import { errorMessages, formSelectors, apiKey } from './js/constants/constants';
   const resultsBlock = document.querySelector(".results");
   const resultsLoadingBlock = resultsBlock.querySelector(".results__loading");
   const resultsFoundBlock = resultsBlock.querySelector(".results__found");
+  const resultsNotFoundBlock = resultsBlock.querySelector(
+    ".results__not-found"
+  );
+  const newsCard = document
+    .querySelector(".card-item")
+    .content;
 
   const newsApi = new NewsApi(
     null,
@@ -31,19 +39,38 @@ import { errorMessages, formSelectors, apiKey } from './js/constants/constants';
 
   let cardsData;
 
+  const renderCard = (source, title, publishedAt, description, urlToImage) => {
+    const card = new NewsCard(newsCard, source, title, publishedAt, description, urlToImage);
+
+    return card.create();
+  };
+
+  const cardList = new NewsCardList(
+    resultsFoundBlock,
+    resultsLoadingBlock,
+    resultsNotFoundBlock,
+    [],
+    renderCard,
+    "test_id"
+  );
+
   const sendData = (data, type) => {
     switch (type) {
       case "search":
         resultsBlock.style.display = "flex";
-        resultsLoadingBlock.style.display = "flex";
+        cardList.renderLoader();
         newsApi.setTopic(data);
         newsApi
           .getNews()
           .then((data) => {
-            resultsLoadingBlock.style.display = "none";
-            resultsFoundBlock.style.display = "flex";
-            cardsData = data.articles;
-            console.log(cardsData);
+            if (!data.articles.length) {
+              cardList.renderError();
+            } else {
+              cardsData = data.articles;
+              cardList.clearData();
+              cardsData.forEach((card) => cardList.addCard(card));
+              cardList.renderResults();
+            }
           })
           .catch((err) => console.log(err.message));
 
