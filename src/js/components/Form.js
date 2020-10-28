@@ -9,7 +9,10 @@ export default class Form {
     this.sendData = sendData;
   }
 
-  setServerError = () => {};
+  setServerError = (info) => {
+    this.serverError = document.querySelector(this.formSelectors.serverError);
+    this.serverError.textContent = info.message;
+  };
 
   setInputError = (input) => {
     const errorMessage = this.errorElements[input.id];
@@ -69,6 +72,10 @@ export default class Form {
     Object.values(this.errorElements).forEach(
       (error) => (error.textContent = "")
     );
+
+    if (this.serverError) {
+      this.serverError.textContent = "";
+    }
 
     this.form.reset();
     this.setSubmitButtonState(false);

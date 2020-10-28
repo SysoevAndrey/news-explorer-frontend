@@ -6,6 +6,7 @@ import Form from "./js/components/Form";
 import NewsCardList from "./js/components/NewsCardList";
 import NewsCard from "./js/components/NewsCard";
 
+import MainApi from "./js/api/MainApi";
 import NewsApi from "./js/api/NewsApi";
 
 import dateParser from "./js/utils/date-parser";
@@ -24,9 +25,7 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
   const resultsNotFoundBlock = resultsBlock.querySelector(
     ".results__not-found"
   );
-  const newsCard = document
-    .querySelector(".card-item")
-    .content;
+  const newsCard = document.querySelector(".card-item").content;
 
   const newsApi = new NewsApi(
     null,
@@ -37,10 +36,62 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
     apiKey
   );
 
-  let cardsData;
+  const mainApi = new MainApi("http://localhost:3000");
 
-  const renderCard = (source, title, publishedAt, description, urlToImage) => {
-    const card = new NewsCard(newsCard, source, title, publishedAt, description, urlToImage);
+  const login = () => {
+    loginPopup.setContent();
+    loginPopup.open();
+  };
+
+  const logout = async () => {
+    if (confirm("Вы действительно хотите выйти")) {
+      const res = await mainApi.logout();
+      console.log(res);
+      window.localStorage.removeItem("jwt");
+      window.localStorage.removeItem("name");
+      // header.render(false, null);
+      location.reload();
+    }
+  };
+
+  const header = new Header(headerItem, "dark", login, logout);
+
+  if (window.localStorage.getItem("jwt")) {
+    header.render(true, window.localStorage.getItem("name"));
+  } else {
+    header.render(false, null);
+  }
+
+  let cardsData;
+  let searchTopic;
+
+  const saveArticle = async (article, isAlreadySaved) => {
+    if (isAlreadySaved) {
+      await mainApi.removeArticle(article);
+      article.setId(null);
+    } else {
+      const articleData = await mainApi.createArticle(article, searchTopic);
+      article.setId(articleData.data._id);
+    }
+  };
+
+  const renderCard = (source, title, publishedAt, description, url, urlToImage) => {
+    const card = new NewsCard(
+      newsCard,
+      source,
+      title,
+      publishedAt,
+      description,
+      url,
+      urlToImage,
+      saveArticle
+    );
+
+    if (window.localStorage.getItem("jwt")) {
+      card.setEventListeners();
+    }
+
+    card.renderIcon();
 
     return card.create();
   };
@@ -50,62 +101,8 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
     resultsLoadingBlock,
     resultsNotFoundBlock,
     [],
-    renderCard,
-    "test_id"
+    renderCard
   );
-
-  const sendData = (data, type) => {
-    switch (type) {
-      case "search":
-        resultsBlock.style.display = "flex";
-        cardList.renderLoader();
-        newsApi.setTopic(data);
-        newsApi
-          .getNews()
-          .then((data) => {
-            if (!data.articles.length) {
-              cardList.renderError();
-            } else {
-              cardsData = data.articles;
-              cardList.clearData();
-              cardsData.forEach((card) => cardList.addCard(card));
-              cardList.renderResults();
-            }
-          })
-          .catch((err) => console.log(err.message));
-
-        break;
-      case "login":
-        // login(data);
-        break;
-      case "signup":
-        // signupForm(data);
-        break;
-    }
-  };
-
-  const searchForm = new Form(
-    "search",
-    searchFormItem,
-    formSelectors,
-    errorMessages,
-    sendData
-  );
-  const loginForm = new Form(
-    "login",
-    null,
-    formSelectors,
-    errorMessages,
-    sendData
-  );
-  const signupForm = new Form(
-    "signup",
-    null,
-    formSelectors,
-    errorMessages,
-    sendData
-  );
-  searchForm.setEventListeners();
 
   const changePopup = (type, currentPopup, login) => {
     currentPopup.close();
@@ -147,6 +144,7 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
     setFormListeners,
     removeFormListeners
   );
+
   const signupPopup = new Popup(
     popupItem,
     signupPopupItem.content.cloneNode(true),
@@ -156,20 +154,74 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
     removeFormListeners
   );
 
-  const login = () => {
-    loginPopup.setContent();
-    loginPopup.open();
+  const sendData = async (data, type) => {
+    switch (type) {
+      case "search":
+        resultsBlock.style.display = "flex";
+        cardList.renderLoader();
+        cardList.toggleButton(true);
+        newsApi.setTopic(data);
+        newsApi
+          .getNews()
+          .then(({ data, topic }) => {
+            searchTopic = topic;
+            if (!data.articles.length) {
+              cardList.renderError();
+            } else {
+              cardsData = data.articles;
+              cardList.clearData();
+              cardsData.forEach((card) => cardList.addCard(card));
+              cardList.renderResults();
+            }
+          })
+          .catch((err) => console.log(err.message));
+
+        break;
+      case "login":
+        const logInfo = await mainApi.signin(data);
+        if (logInfo.token) {
+          window.localStorage.setItem("jwt", logInfo.token);
+          loginPopup.close();
+
+          const userData = await mainApi.getUserData();
+          window.localStorage.setItem("name", userData.name);
+          // header.render(true, userData.name);
+          location.reload();
+        } else {
+          loginForm.setServerError(logInfo);
+        }
+
+        break;
+      case "signup":
+        signupPopup.close();
+        // signupForm(data);
+        break;
+    }
   };
 
-  const logout = () => {
-    alert("Вы действительно хотите выйти?");
-    console.log("logout");
-  };
-
-  const header = new Header(headerItem, "dark", "Andrey", login, logout);
+  const searchForm = new Form(
+    "search",
+    searchFormItem,
+    formSelectors,
+    errorMessages,
+    sendData
+  );
+  const loginForm = new Form(
+    "login",
+    null,
+    formSelectors,
+    errorMessages,
+    sendData
+  );
+  const signupForm = new Form(
+    "signup",
+    null,
+    formSelectors,
+    errorMessages,
+    sendData
+  );
+  searchForm.setEventListeners();
 
   loginPopup.setEventListeners();
   signupPopup.setEventListeners();
-
-  header.render();
 })();

@@ -130,7 +130,7 @@
     <template class="card-item">
       <div class="card">
         <p class="card__additional"></p>
-        <button class="button card__save-icon card__save-icon_saved"></button>
+        <button class="button card__save-icon"></button>
         <p class="card__additional card__additional_type_save">
           Войдите, чтобы сохранять статьи
         </p>
@@ -177,6 +177,7 @@
             maxlength="30"
           />
           <span class="error popup__pass-error"></span>
+          <span class="error popup__server-error"></span>
           <button
             type="submit"
             class="button popup__button login-popup__button"
@@ -237,6 +238,7 @@
             maxlength="30"
           />
           <span class="error popup__username-error"></span>
+          <span class="error popup__server-error"></span>
           <button
             type="submit"
             class="button popup__button signup-popup__button"

@@ -9,6 +9,7 @@ const formSelectors = {
   button: ".button",
   buttonActive: "popup__button_active",
   input: ".input",
+  serverError: ".popup__server-error",
 };
 
 const apiKey = "393933fc023c43db92ea162494a5ec25";
