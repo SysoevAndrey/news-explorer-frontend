@@ -3,7 +3,25 @@ export default class MainApi {
     this.url = url;
   }
 
-  signup = () => {};
+  signup = async ({ email, pass, name }) => {
+    const res = await fetch(`${this.url}/signup`, {
+      method: "POST",
+      mode: "cors",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password: pass,
+        name,
+      }),
+    });
+
+    const logInfo = await res.json();
+
+    return logInfo;
+  };
 
   signin = async ({ email, pass }) => {
     const res = await fetch(`${this.url}/signin`, {

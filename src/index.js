@@ -18,6 +18,7 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
   const popupItem = document.querySelector(".popup");
   const loginPopupItem = document.querySelector(".login-popup");
   const signupPopupItem = document.querySelector(".signup-popup");
+  const resPopupItem = document.querySelector(".res-popup");
   const searchFormItem = document.querySelector(".search__form");
   const resultsBlock = document.querySelector(".results");
   const resultsLoadingBlock = resultsBlock.querySelector(".results__loading");
@@ -75,7 +76,14 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
     }
   };
 
-  const renderCard = (source, title, publishedAt, description, url, urlToImage) => {
+  const renderCard = (
+    source,
+    title,
+    publishedAt,
+    description,
+    url,
+    urlToImage
+  ) => {
     const card = new NewsCard(
       newsCard,
       source,
@@ -108,7 +116,8 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
     currentPopup.close();
 
     if (login) {
-      // RES POPUP
+      resPopup.setContent();
+      resPopup.open();
     } else if (type === "login") {
       signupPopup.setContent();
       signupPopup.open();
@@ -154,6 +163,15 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
     removeFormListeners
   );
 
+  const resPopup = new Popup(
+    popupItem,
+    resPopupItem.content.cloneNode(true),
+    changePopup,
+    "result",
+    null,
+    null
+  );
+
   const sendData = async (data, type) => {
     switch (type) {
       case "search":
@@ -171,7 +189,7 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
               cardsData = data.articles;
               cardList.clearData();
               cardsData.forEach((card) => cardList.addCard(card));
-              cardList.renderResults();
+              cardList.renderResults(cardsData.length < 3 ? cardsData.length : 3);
             }
           })
           .catch((err) => console.log(err.message));
@@ -193,7 +211,8 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
 
         break;
       case "signup":
-        signupPopup.close();
+        await mainApi.signup(data);
+        changePopup("signup", signupPopup, true);
         // signupForm(data);
         break;
     }
@@ -224,4 +243,5 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
 
   loginPopup.setEventListeners();
   signupPopup.setEventListeners();
+  resPopup.setEventListeners();
 })();
