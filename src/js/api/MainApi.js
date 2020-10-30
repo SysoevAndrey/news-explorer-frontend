@@ -57,6 +57,7 @@ export default class MainApi {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
     });
 
     const logInfo = await res.json();

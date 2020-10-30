@@ -24,7 +24,7 @@ import { endings } from "../js/constants/constants";
     window.location.href = "/";
   }
 
-  const mainApi = new MainApi("http://localhost:3000");
+  const mainApi = new MainApi("https://api.getnews.gq");
 
   const logout = async () => {
     if (confirm("Вы действительно хотите выйти")) {
@@ -60,9 +60,13 @@ import { endings } from "../js/constants/constants";
 
   infoTitleItem.textContent = `${window.localStorage.getItem("name")}, у вас ${
     keywords.length
-  } сохраннёных ${endings[uniqueKeywords.length % 10]}`;
+  } ${endings[uniqueKeywords.length % 10]}`;
 
-  infoTopicsItem.textContent = `${sortedUniqueKeywords[0].keyword}, ${sortedUniqueKeywords[1].keyword}`;
+  if (sortedUniqueKeywords[0] && sortedUniqueKeywords[1]) {
+    infoTopicsItem.textContent = `${sortedUniqueKeywords[0].keyword}, ${sortedUniqueKeywords[1].keyword}`;
+  } else if (sortedUniqueKeywords[0]) {
+    infoTopicsItem.textContent = `${sortedUniqueKeywords[0].keyword}`;
+  }
 
   if (uniqueKeywords.length <= 3 && uniqueKeywords.length > 2) {
     infoTopicsEndItem.textContent = sortedUniqueKeywords[2].keyword;
@@ -78,7 +82,7 @@ import { endings } from "../js/constants/constants";
     await mainApi.removeArticle(article);
 
     newsCardList.removeArticle(article.card);
-  }
+  };
 
   const renderCard = (
     source,
@@ -121,8 +125,8 @@ import { endings } from "../js/constants/constants";
       url: article.link,
       urlToImage: article.image,
       keyword: article.keyword,
-      _id: article._id
-    }
+      _id: article._id,
+    };
     return temp;
   });
 

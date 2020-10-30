@@ -12,12 +12,6 @@ export default class Header {
       userName,
     };
 
-    this.currentList = document.querySelector(".header__container");
-
-    if (this.currentList) {
-      this.header.removeChild(this.currentList);
-    }
-
     if (this.props.isLoggedIn) {
       this.headerList = document
         .querySelector("#logged")
@@ -56,8 +50,27 @@ export default class Header {
     );
   };
 
+  toggleList = () => {
+    const mobileHeader = this.header.querySelector(".header__container");
+
+    if (document.documentElement.clientWidth <= 575) {
+      if (this.openButton.classList.contains('header__open_close')) {
+        this.openButton.classList.remove('header__open_close');
+        this.header.classList.remove("header_dark");
+        mobileHeader.classList.remove("header__container_is-opened");
+      } else {
+        this.openButton.classList.add('header__open_close');
+        this.header.classList.add("header_dark");
+        mobileHeader.classList.add("header__container_is-opened");
+      }
+    }
+  }
+
   setEventListeners = (action) => {
     const button = this.headerList.querySelector(".header__button");
+    this.openButton = this.header.querySelector(".header__open");
+
+    this.openButton.addEventListener('click', this.toggleList);
 
     if (action === "login") {
       button.addEventListener("click", this.login);

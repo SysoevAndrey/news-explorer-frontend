@@ -37,16 +37,18 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
     apiKey
   );
 
-  const mainApi = new MainApi("http://localhost:3000");
+  const mainApi = new MainApi("https://api.getnews.gq");
 
   const login = () => {
+    header.toggleList()
     loginPopup.setContent();
     loginPopup.open();
   };
 
   const logout = async () => {
     if (confirm("Вы действительно хотите выйти")) {
-      await mainApi.logout();
+      const res = await mainApi.logout();
+      console.log(res);
       window.localStorage.removeItem("jwt");
       window.localStorage.removeItem("name");
       // header.render(false, null);
