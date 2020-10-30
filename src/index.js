@@ -182,53 +182,88 @@ const resPopup = new Popup(
 const sendData = async (data, type) => {
   switch (type) {
     case "search":
+      const [search] = data;
+      const keyword = search.value;
+
       resultsBlock.style.display = "flex";
+
       cardList.renderLoader();
       cardList.toggleButton(true);
-      newsApi.setTopic(data);
+
+      newsApi.setTopic(keyword);
       newsApi
         .getNews()
         .then(({ data, topic }) => {
+          searchForm.disableForm(false);
           searchTopic = topic;
           if (!data.articles.length) {
             cardList.renderError();
           } else {
             cardsData = data.articles;
+
             cardList.clearData();
+
             cardsData.forEach((card) => cardList.addCard(card));
+
             cardList.renderResults(
               cardsData.length < 3 ? cardsData.length : 3,
               false
             );
           }
         })
-        .catch((err) => console.log(err.message));
+        .catch((err) => {
+          searchForm.disableForm(false);
+          console.log(err.message);
+        });
 
       break;
     case "login":
       try {
-        const logInfo = await mainApi.signin(data);
+        const [email, pass] = data;
+
+        const logData = {
+          email: email.value,
+          pass: pass.value,
+        };
+
+        const logInfo = await mainApi.signin(logData);
         if (logInfo.token) {
           window.localStorage.setItem("jwt", logInfo.token);
+
+          loginForm.disableForm(false);
           loginPopup.close();
 
           const userData = await mainApi.getUserData();
+
           window.localStorage.setItem("name", userData.name);
-          // header.render(true, userData.name);
+
           location.reload();
         } else {
           loginForm.setServerError(logInfo);
         }
       } catch (err) {
+        loginForm.disableForm(false);
         console.log(err);
       }
 
       break;
     case "signup":
       try {
-        await mainApi.signup(data);
+        const [email, pass, username] = data;
+
+        const logData = {
+          email: email.value,
+          pass: pass.value,
+          name: username.value,
+        };
+
+        await mainApi.signup(logData);
+
+        signupForm.disableForm(false);
+
         changePopup("signup", signupPopup, true);
       } catch (err) {
+        signupForm.disableForm(false);
         console.log(err);
       }
 

@@ -7,7 +7,6 @@ export default class MainApi {
     try {
       const res = await fetch(`${this.url}/signup`, {
         method: "POST",
-        mode: "cors",
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -19,11 +18,15 @@ export default class MainApi {
         }),
       });
 
+      if (!res.ok) {
+        throw new Error(res.status);
+      }
+
       const logInfo = await res.json();
 
       return logInfo;
     } catch (err) {
-      console.log(err);
+      throw err
     }
   };
 
@@ -31,7 +34,6 @@ export default class MainApi {
     try {
       const res = await fetch(`${this.url}/signin`, {
         method: "POST",
-        mode: "cors",
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -42,11 +44,15 @@ export default class MainApi {
         }),
       });
 
+      if (!res.ok) {
+        throw new Error(res.status);
+      }
+
       const logInfo = await res.json();
 
       return logInfo;
     } catch (err) {
-      console.log(err);
+      throw err;
     }
   };
 
@@ -77,7 +83,7 @@ export default class MainApi {
 
       return logInfo;
     } catch (err) {
-      console.log(err);
+      throw err;
     }
   };
 

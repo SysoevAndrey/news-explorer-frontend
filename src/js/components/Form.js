@@ -81,32 +81,22 @@ export default class Form {
     this.setSubmitButtonState(false);
   };
 
+  disableForm = (disabled) => {
+    this.elements = [...this.form.elements];
+
+    this.elements.forEach((element) =>
+      disabled
+        ? element.setAttribute("disabled", true)
+        : element.removeAttribute("disabled")
+    );
+  };
+
   _getInfo = (evt) => {
     evt.preventDefault();
 
-    const elements = evt.target.elements;
-    let data;
+    this.disableForm(true);
 
-    switch (this.type) {
-      case "search":
-        data = elements.search.value;
-        break;
-      case "login":
-        data = {
-          email: elements.email.value,
-          pass: elements.pass.value,
-        };
-        break;
-      case "signup":
-        data = {
-          email: elements.email.value,
-          pass: elements.pass.value,
-          name: elements.username.value,
-        };
-        break;
-    }
-
-    this.sendData(data, this.type);
+    this.sendData(this.elements, this.type);
   };
 
   setForm = (form) => {
