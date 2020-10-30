@@ -6,6 +6,10 @@
   padding: 16px 24px 18px;
 }
 
+.card__description:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .card__description {
     padding: 14px 18px 10px 16px;

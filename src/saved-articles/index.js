@@ -28,11 +28,14 @@ import { endings } from "../js/constants/constants";
 
   const logout = async () => {
     if (confirm("Вы действительно хотите выйти")) {
-      await mainApi.logout();
-      window.localStorage.removeItem("jwt");
-      window.localStorage.removeItem("name");
-      // header.render(false, null);
-      window.location.reload();
+      try {
+        await mainApi.logout();
+        window.localStorage.removeItem("jwt");
+        window.localStorage.removeItem("name");
+        window.location.reload();
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
@@ -40,7 +43,14 @@ import { endings } from "../js/constants/constants";
 
   header.render(true, window.localStorage.getItem("name"));
 
-  const savedArticles = await mainApi.getArticles();
+  let savedArticles;
+
+  try {
+    savedArticles = await mainApi.getArticles();
+  } catch (err) {
+    console.log(err);
+  }
+
   const keywords = savedArticles.data.map((article) => article.keyword);
 
   const uniqueKeywords = [];
@@ -79,9 +89,12 @@ import { endings } from "../js/constants/constants";
   }
 
   const removeArticle = async (article) => {
-    await mainApi.removeArticle(article);
-
-    newsCardList.removeArticle(article.card);
+    try {
+      await mainApi.removeArticle(article);
+      newsCardList.removeArticle(article.card);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const renderCard = (
@@ -107,7 +120,7 @@ import { endings } from "../js/constants/constants";
       removeArticle
     );
 
-    card.setEventListeners();
+    card.setEventListeners(true);
 
     card.renderIcon();
 

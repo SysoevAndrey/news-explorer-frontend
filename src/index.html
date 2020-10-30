@@ -29,12 +29,14 @@
           <input
             type="text"
             class="input search__input"
+            id="search"
             placeholder="Введите тему новости"
             name="search"
             autocomplete="off"
+            required
           />
+          <p class="error search__error"></p>
           <button class="button search__button">Искать</button>
-          <p class="error search__server-error"></p>
         </form>
       </div>
       <div class="results">

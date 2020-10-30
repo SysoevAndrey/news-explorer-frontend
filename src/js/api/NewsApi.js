@@ -13,22 +13,26 @@ export default class NewsApi {
   };
 
   getNews = async () => {
-    const res = await fetch(
-      `https://nomoreparties.co/news/v2/top-headlines?country=us&apiKey=${this.apiKey}&q=${this.q}&from=${this.from}&sortBy=${this.sortBy}&pageSize=${this.pageSize}`
-    );
+    try {
+      const res = await fetch(
+        `https://nomoreparties.co/news/v2/everything?apiKey=${this.apiKey}&q=${this.q}&from=${this.from}&sortBy=${this.sortBy}&pageSize=${this.pageSize}`
+      );
 
-    if (!res.ok) {
-      const message = `An error has occured: ${res.status}`;
-      throw new Error(message);
+      if (!res.ok) {
+        const message = `An error has occured: ${res.status}`;
+        throw new Error(message);
+      }
+
+      const data = await res.json();
+
+      const result = {
+        data,
+        topic: this.q,
+      };
+
+      return result;
+    } catch (err) {
+      console.log(err);
     }
-
-    const data = await res.json();
-
-    const result = {
-      data,
-      topic: this.q,
-    };
-
-    return result;
   };
 }

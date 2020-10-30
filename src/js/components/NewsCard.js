@@ -58,19 +58,21 @@ export default class NewsCard {
     }
   };
 
-  setEventListeners = () => {
-    if (!this.keyword) {
-      this.icon.addEventListener("click", () => {
-        if (this.icon.classList.contains("card__save-icon_saved")) {
-          this.save(this, true);
-        } else {
-          this.save(this, false);
-        }
+  setEventListeners = (isLogged) => {
+    this.card.querySelector(".card__description").addEventListener('click', () => window.open(this.url));
 
-        this.renderIcon();
-      });
-    } else {
-      this.icon.addEventListener("click", this.save.bind(null, this));
+    if (isLogged) {
+      if (!this.keyword) {
+        this.icon.addEventListener("click", () => {
+          if (this.icon.classList.contains("card__save-icon_saved")) {
+            this.save(this, true);
+          } else {
+            this.save(this, false);
+          }
+        });
+      } else {
+        this.icon.addEventListener("click", this.save.bind(null, this));
+      }
     }
   };
 }
