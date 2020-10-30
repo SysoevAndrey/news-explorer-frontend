@@ -57,9 +57,10 @@ export default class NewsCardList {
   };
 
   showMore = () => {
-    this.counter += 3;
+    const threeCards = 3;
+    this.counter += threeCards;
 
-    for (let i = this.counter - 3; i < this.counter; i++) {
+    for (let i = this.counter - threeCards; i < this.counter; i++) {
       this.cardsContainer.appendChild(this.cards[i]);
 
       if (this.cards[i + 1] === undefined) {
