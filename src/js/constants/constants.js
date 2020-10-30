@@ -31,4 +31,17 @@ const months = {
   "12": "декабря",
 };
 
-export { errorMessages, formSelectors, apiKey, emailExp, months };
+const endings = {
+  1: "статья",
+  2: "статьи",
+  3: "статьи",
+  4: "статьи",
+  5: "статей",
+  6: "статей",
+  7: "статей",
+  8: "статей",
+  9: "статей",
+  0: "статей",
+};
+
+export { errorMessages, formSelectors, apiKey, emailExp, months, endings };

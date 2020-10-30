@@ -46,8 +46,7 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
 
   const logout = async () => {
     if (confirm("Вы действительно хотите выйти")) {
-      const res = await mainApi.logout();
-      console.log(res);
+      await mainApi.logout();
       window.localStorage.removeItem("jwt");
       window.localStorage.removeItem("name");
       // header.render(false, null);
@@ -82,7 +81,7 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
     publishedAt,
     description,
     url,
-    urlToImage
+    urlToImage,
   ) => {
     const card = new NewsCard(
       newsCard,
@@ -92,6 +91,8 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
       description,
       url,
       urlToImage,
+      null,
+      null,
       saveArticle
     );
 
@@ -189,7 +190,7 @@ import { errorMessages, formSelectors, apiKey } from "./js/constants/constants";
               cardsData = data.articles;
               cardList.clearData();
               cardsData.forEach((card) => cardList.addCard(card));
-              cardList.renderResults(cardsData.length < 3 ? cardsData.length : 3);
+              cardList.renderResults(cardsData.length < 3 ? cardsData.length : 3, false);
             }
           })
           .catch((err) => console.log(err.message));

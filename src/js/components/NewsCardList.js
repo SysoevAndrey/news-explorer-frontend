@@ -10,7 +10,11 @@ export default class NewsCardList {
     this.buttonMore = this.container.querySelector(".results__button");
   }
 
-  renderResults = (limit) => {
+  removeArticle = (article) => {
+    this.cardsContainer.removeChild(article);
+  }
+
+  renderResults = (limit, saved) => {
     this.cards = this.initialCards.map((card) =>
       this.renderCard(
         card.source.name,
@@ -18,7 +22,9 @@ export default class NewsCardList {
         card.publishedAt,
         card.description,
         card.url,
-        card.urlToImage
+        card.urlToImage,
+        card.keyword,
+        card._id
       )
     );
 
@@ -26,7 +32,7 @@ export default class NewsCardList {
       this.cardsContainer.appendChild(this.cards[this.counter]);
     }
 
-    if (limit > 2) {
+    if (limit > 2 && !saved) {
       this.buttonMore.addEventListener("click", this.showMore);
       this.toggleButton(true);
     } else {

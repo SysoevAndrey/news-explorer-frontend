@@ -60,10 +60,19 @@ export default class MainApi {
     });
 
     const logInfo = await res.json();
+
     return logInfo;
   };
 
-  getArticles = () => {};
+  getArticles = async () => {
+    const res = await fetch(`${this.url}/articles`, {
+      credentials: "include",
+    })
+
+    const resJSON = await res.json();
+
+    return resJSON;
+  };
 
   createArticle = async (article, keyword) => {
     const res = await fetch(`${this.url}/articles`, {
