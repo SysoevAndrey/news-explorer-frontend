@@ -14,7 +14,7 @@ export default class NewsApi {
 
   getNews = async () => {
     const res = await fetch(
-      `http://newsapi.org/v2/everything?q=${this.q}&from=${this.from}&sortBy=${this.sortBy}&pageSize=${this.pageSize}&language=${this.language}&apiKey=${this.apiKey}`
+      `https://nomoreparties.co/news/v2/top-headlines?country=us&apiKey=${this.apiKey}&q=${this.q}&from=${this.from}&sortBy=${this.sortBy}&pageSize=${this.pageSize}`
     );
 
     if (!res.ok) {
