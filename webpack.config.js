@@ -11,8 +11,8 @@ const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   entry: {
-    main: "./src/main.js",
-    articles: "./src/saved-articles/articles.js",
+    main: "./src/index.js",
+    articles: "./src/saved-articles/index.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -21,9 +21,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: { loader: "babel-loader" },
-        exclude: /node_modules/,
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: "babel-loader",
+        options: {
+          // presets: ["env", "react", "es2015"],
+          plugins: ["transform-class-properties"],
+        },
       },
       {
         test: /\.(png|jpe?g|gif|ico|svg)$/,

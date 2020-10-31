@@ -18,155 +18,34 @@
       <header class="header header_light">
         <p class="header__title">NewsExplorer</p>
         <button class="header__open header__open_light"></button>
-        <nav class="header__container">
-          <ul class="header__list">
-            <li class="header__list-item">
-              <a href="./index.html" class="header__link">Главная</a>
-            </li>
-            <li class="header__list-item header__list-item_current-light">
-              <a href="./articles.html" class="header__link">Сохраненные статьи</a>
-            </li>
-          </ul>
-          <button class="button header__button header__button_light">
-            <span class="header__button-text header__button-text_light"
-              >Андрей</span
-            >
-            <img
-              src="<%=require('../images/logout-light.svg').default %>"
-              alt="Выход"
-              class="header__button-icon"
-            />
-          </button>
-        </nav>
       </header>
       <div class="info">
         <p class="info__saved">Сохранённые статьи</p>
-        <h1 class="info__title">Андрей, у вас 5 сохранённых статей</h1>
+        <h1 class="info__title"></h1>
         <h2 class="info__keys">
-          По ключевым словам: <span class="info__strong">Природа, Тайга</span> и
-          <span class="info__strong">2-м другим</span>
+          По ключевым словам: <span class="info__strong"></span> и
+          <span class="info__strong info__strong_third"></span>
         </h2>
       </div>
       <div class="results results_saved">
-        <div class="results__container">
-          <div class="card">
-            <p class="card__additional card__additional_type_category">
-              Природа
-            </p>
-            <button class="button card__delete-icon"></button>
-            <p class="card__additional card__additional_type_delete">
-              Убрать из сохранённых
-            </p>
-            <img
-              src="<%=require('../images/cards/image_08.jpg').default%>"
-              alt="Цветок"
-              class="card__image"
-            />
-            <div class="card__description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <h4 class="card__source">Лента.ру</h4>
-            </div>
-          </div>
-          <div class="card">
-            <p class="card__additional card__additional_type_category">Лес</p>
-            <button class="button card__delete-icon"></button>
-            <p class="card__additional card__additional_type_delete">
-              Убрать из сохранённых
-            </p>
-            <img
-              src="<%=require('../images/cards/image_08.jpg').default %>"
-              alt="Цветок"
-              class="card__image"
-            />
-            <div class="card__description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <h4 class="card__source">Лента.ру</h4>
-            </div>
-          </div>
-          <div class="card">
-            <p class="card__additional card__additional_type_category">
-              Природа
-            </p>
-            <button class="button card__delete-icon"></button>
-            <p class="card__additional card__additional_type_delete">
-              Убрать из сохранённых
-            </p>
-            <img
-              src="<%=require('../images/cards/image_08.jpg').default %>"
-              alt="Цветок"
-              class="card__image"
-            />
-            <div class="card__description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <h4 class="card__source">Лента.ру</h4>
-            </div>
-          </div>
-          <div class="card">
-            <p class="card__additional card__additional_type_category">
-              Природа
-            </p>
-            <button class="button card__delete-icon"></button>
-            <p class="card__additional card__additional_type_delete">
-              Убрать из сохранённых
-            </p>
-            <img
-              src="<%=require('../images/cards/image_08.jpg').default %>"
-              alt="Цветок"
-              class="card__image"
-            />
-            <div class="card__description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <h4 class="card__source">Лента.ру</h4>
-            </div>
-          </div>
-          <div class="card">
-            <p class="card__additional card__additional_type_category">
-              Природа
-            </p>
-            <button class="button card__delete-icon"></button>
-            <p class="card__additional card__additional_type_delete">
-              Убрать из сохранённых
-            </p>
-            <img
-              src="<%=require('../images/cards/image_08.jpg').default %>"
-              alt="Цветок"
-              class="card__image"
-            />
-            <div class="card__description">
-              <p class="card__date">2 августа, 2019</p>
-              <h3 class="card__title">Национальное достояние – парки</h3>
-              <p class="card__text">
-                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-                начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.
-              </p>
-              <h4 class="card__source">Лента.ру</h4>
-            </div>
-          </div>
+        <div class="results__loading">
+          <i class="preloader"></i>
+          <p class="results__loading-message">Идет поиск новостей...</p>
+        </div>
+        <div class="results__found">
+          <div class="results__container"></div>
+          <button class="button results__button">Показать еще</button>
+        </div>
+        <div class="results__not-found">
+          <img
+            src="<%=require('../images/not-found.svg').default %>"
+            alt="Не найдено"
+            class="results__not-found-img"
+          />
+          <h3 class="results__not-found-title">Ничего не найдено</h3>
+          <p class="results__not-found-text">
+            К сожалению по вашему запросу ничего не найдено.
+          </p>
         </div>
       </div>
       <footer class="footer">
@@ -176,10 +55,13 @@
         <nav class="footer__container">
           <ul class="footer__list">
             <li class="footer__list-item">
-              <a href="#main" class="footer__link">Главная</a>
+              <a href="/" class="footer__link">Главная</a>
             </li>
             <li class="footer__list-item">
-              <a href="https://praktikum.yandex.ru/" class="footer__link"
+              <a
+                href="https://praktikum.yandex.ru/"
+                class="footer__link"
+                target="blank"
                 >Яндекс.Практикум</a
               >
             </li>
@@ -214,6 +96,59 @@
           </ul>
         </nav>
       </footer>
+
+      <template class="card-item">
+        <div class="card">
+          <p class="card__additional card__additional_type_category"></p>
+          <button class="button card__delete-icon"></button>
+          <p class="card__additional card__additional_type_delete">
+            Убрать из сохранённых
+          </p>
+          <div class="card__image"></div>
+          <div class="card__description">
+            <p class="card__date"></p>
+            <h3 class="card__title"></h3>
+            <p class="card__text"></p>
+            <h4 class="card__source"></h4>
+          </div>
+        </div>
+      </template>
+
+      <template id="logged">
+        <nav class="header__container">
+          <ul class="header__list">
+            <li class="header__list-item">
+              <a href="../" class="header__link">Главная</a>
+            </li>
+            <li class="header__list-item header__list-item_current">
+              <a href="./articles.html" class="header__link"
+                >Сохраненные статьи</a
+              >
+            </li>
+          </ul>
+          <button type="submit" class="button header__button">
+            <span class="header__button-text"></span>
+            <img
+              src="<%=require('../images/logout-light.svg').default %>"
+              alt="Выход"
+              class="header__button-icon"
+            />
+          </button>
+        </nav>
+      </template>
+
+      <template id="unlogged">
+        <nav class="header__container">
+          <ul class="header__list">
+            <li class="header__list-item header__list-item_current">
+              <a href="./index.html" class="header__link">Главная</a>
+            </li>
+          </ul>
+          <button type="submit" class="button header__button">
+            <span class="header__button-text">Авторизоваться</span>
+          </button>
+        </nav>
+      </template>
     </div>
     <script src="<%=htmlWebpackPlugin.files.js %>"></script>
   </body>
